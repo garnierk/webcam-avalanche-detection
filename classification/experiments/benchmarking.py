@@ -1,7 +1,7 @@
 from typing import Any, Dict, List, Tuple, Union
 
 import pandas as pd
-from experiment_run import ExperimentRun
+from .experiment_run import ExperimentRun
 from torchvision.models import (ResNet18_Weights, ResNet34_Weights,
                                 ResNet50_Weights, ResNet101_Weights,
                                 ResNet152_Weights, VGG13_Weights,
@@ -13,7 +13,7 @@ IM_SIZE = 704
 RESULTS_FILE = f'./classification/experiments/benchmark_scores_{IM_SIZE}.csv'
 '''File path to the output results'''
 
-DATA_ROOT = '.data/images'
+DATA_ROOT = '.data/'
 '''Folder containing /train and /test image folders'''
 
 MODELS_DIR = f'./classification/experiments/models/benchmarks_{IM_SIZE}'
@@ -25,7 +25,7 @@ BASE_CFG = {
     'image_loader': None,
     'lr': 2.25e-5,
     'num_classes': 4,
-    'num_workers': 16,
+    'num_workers': 8,
     'optimizer': 'Adam',
     'test_dir': DATA_ROOT+'/test/images',
     'train_dir': DATA_ROOT+'/train/images',
@@ -38,13 +38,13 @@ BASE_CFG = {
 
 BENCHMARK_MODELS: List[Tuple[str, Any]] = [
     ('ResNet152', ResNet152_Weights.IMAGENET1K_V2),
-    ('ResNet101', ResNet101_Weights.IMAGENET1K_V2),
-    ('ResNet50', ResNet50_Weights.IMAGENET1K_V2),
-    ('ResNet34', ResNet34_Weights.IMAGENET1K_V1),
-    ('ResNet18', ResNet18_Weights.IMAGENET1K_V1),
-    ('vgg19', VGG19_Weights.IMAGENET1K_V1),
-    ('vgg16', VGG16_Weights.IMAGENET1K_V1),
-    ('vgg13', VGG13_Weights.IMAGENET1K_V1),
+    #('ResNet101', ResNet101_Weights.IMAGENET1K_V2),
+    #('ResNet50', ResNet50_Weights.IMAGENET1K_V2),
+    #('ResNet34', ResNet34_Weights.IMAGENET1K_V1),
+    #('ResNet18', ResNet18_Weights.IMAGENET1K_V1),
+    #('vgg19', VGG19_Weights.IMAGENET1K_V1),
+    #('vgg16', VGG16_Weights.IMAGENET1K_V1),
+    #('vgg13', VGG13_Weights.IMAGENET1K_V1),
 ]
 
 
@@ -126,6 +126,7 @@ def _get_score_from_model_name(model_name: str, suppress_logging: bool = True,
 
 if __name__ == '__main__':
     # Train models
+    train_model("ResNet18", ResNet18_Weights.IMAGENET1K_V1)
     for (architecture, weights) in BENCHMARK_MODELS:
         train_model(architecture, weights)
 

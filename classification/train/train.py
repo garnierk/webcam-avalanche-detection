@@ -128,7 +128,7 @@ class PytorchModel(object):
             mean, std = mean_std
         else:
             print("Calculating mean and standard deviation")
-            mean, std = calculate_mean_std(batch_size=64, image_loader=self.image_loader,
+            mean, std = calculate_mean_std(batch_size=self.batch_size, image_loader=self.image_loader,
                                            full_size=self.full_size, input_size=self.input_size,
                                            train_dir=self.train_dir, num_workers=self.num_workers)
         self.mean_std = (mean.tolist(), std.tolist())
