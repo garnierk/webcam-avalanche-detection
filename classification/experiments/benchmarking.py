@@ -1,5 +1,7 @@
 from typing import Any, Dict, List, Tuple, Union
 
+import comet_ml
+
 import pandas as pd
 from .experiment_run import ExperimentRun
 from torchvision.models import (ResNet18_Weights, ResNet34_Weights,
@@ -30,7 +32,7 @@ BASE_CFG = {
     'test_dir': DATA_ROOT+'/test/images',
     'train_dir': DATA_ROOT+'/train/images',
     'train_transforms': None,
-    'use_wandb': True,
+    'use_comet': True,
     'input_size': IM_SIZE,
     'full_size': int(IM_SIZE * 1.05),
 }
@@ -53,20 +55,20 @@ def _model_name(architecture: str) -> str:
     return f'{architecture}_benchmark_{IM_SIZE}'
 
 
-def train_model(architecture: str, weights, wandb_project: str = 'avalanche_benchmark'):
+def train_model(architecture: str, weights, comet_project: str = 'avalanche_benchmark'):
     '''Train a model for the given architecture and weights.
 
     Args:
         architecture (str):  the model base architecture.
         weights:             PyTorch weights for the given base architecture.
-        wandb_project (str): name of the wandb project for logging results.
+        comet_project (str): name of the comet project for logging results.
     '''
     model_name = _model_name(architecture)
     train_config = {
         **BASE_CFG,
         'architecture': architecture,
         'weights': weights,
-        'wandb_init': {'project': wandb_project,
+        'comet_init': {'project': comet_project,
                        'name': model_name,
                        'tags': [architecture, 'Adam', str(weights)]}
     }
@@ -126,7 +128,6 @@ def _get_score_from_model_name(model_name: str, suppress_logging: bool = True,
 
 if __name__ == '__main__':
     # Train models
-    train_model("ResNet18", ResNet18_Weights.IMAGENET1K_V1)
     for (architecture, weights) in BENCHMARK_MODELS:
         train_model(architecture, weights)
 

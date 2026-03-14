@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.optim as optim
 import torchvision.models as models
 
-LabelScores = TypedDict('WandbMulticlassDict',
+LabelScores = TypedDict('CometMulticlassDict',
                         {'glide/f1': float,
                          'glide/precision': float,
                          'glide/recall': float,
@@ -22,8 +22,8 @@ LabelScores = TypedDict('WandbMulticlassDict',
 '''Scores available when the standard avalanche labels are used'''
 
 
-class WandbMulticlassDict(LabelScores):
-    '''Dict with wandb multiclass scores.'''
+class CometMulticlassDict(LabelScores):
+    '''Dict with comet multiclass scores.'''
     epoch: int
     accuracy: float
     f1: float
@@ -31,18 +31,18 @@ class WandbMulticlassDict(LabelScores):
     recall: float
 
 
-WandbBinaryDict = TypedDict('WandbBinaryDict',
+CometBinaryDict = TypedDict('CometBinaryDict',
                             {'epoch': int,
                              'binary/accuracy': float,
                              'binary/precision': float,
                              'binary/recall': float,
                              'binary/f1': float, }
                             )
-'''Dict with wandb binary scores.'''
+'''Dict with comet binary scores.'''
 
 
-class WandbScoreDict(WandbMulticlassDict, WandbBinaryDict):
-    '''Dict containing all wandb scores'''
+class CometScoreDict(CometMulticlassDict, CometBinaryDict):
+    '''Dict containing all comet scores'''
     loss: float
 
 

@@ -43,13 +43,13 @@ class ExperimentRun(object):
     '''(str): path to the experiment config and details.'''
 
     experiment_dir: str
-    '''(str): the directory of the experiment subfolder and wandb run names.'''
+    '''(str): the directory of the experiment subfolder and comet run names.'''
 
     def __init__(self, run_dir: str = '', experiment_name: str = ''):
         """
 
         Args:
-            experiment_name (str): the name of the experiment subfolder and wandb run names.
+            experiment_name (str): the name of the experiment subfolder and comet run names.
             run_dir (str): the directory where all run information will be saved in or loaded from. A folder will be created in this directory.
         """
         assert os.path.exists(
@@ -180,7 +180,7 @@ class ExperimentRun(object):
 
         # Load and correct train config
         train_config = config[TRAIN_CONFIG]
-        train_config['use_wandb'] = False  # Supress wandb logging
+        train_config['use_comet'] = False  # Supress comet logging
 
         # Optionally override the train and test directories
         if test_dir is not None:

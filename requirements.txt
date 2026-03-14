@@ -5,7 +5,7 @@ numpy==1.24.4
 opencv-python==4.8.1.*
 tqdm==4.64.1
 scikit-learn==1.2.1
-wandb>=0.25.1
+comet_ml>=3.44.0
 pandas==1.5.3
 jinja2==3.1.2
 

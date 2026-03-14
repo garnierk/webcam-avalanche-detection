@@ -18,7 +18,7 @@ BASE_CFG = {
     'test_dir': DATA_ROOT+'/test/images',
     'train_dir': DATA_ROOT+'/train/images',
     'train_transforms': None,
-    'use_wandb': True,
+    'use_comet': True,
     'input_size': IM_SIZE,
     'full_size': int(IM_SIZE * 1.05)
 }
@@ -56,7 +56,7 @@ def resnet_label_experiment(n_labels: int, architecture: str = 'ResNet101', weig
         'label_mapping': get_label_mapping(n_labels),
         'architecture': architecture,
         'weights': weights,
-        'wandb_init': {'project': 'paper_initial_tests',
+        'comet_init': {'project': 'paper_initial_tests',
                        'name': model_name,
                        'tags': ['ResNet', 'IMAGENET1K_V2', 'Adam']}
     }
@@ -80,7 +80,7 @@ def vgg_label_experiment(n_labels: int, starting_idx: int = 0):
         'label_mapping': get_label_mapping(n_labels),
         'architecture': 'vgg19',
         'weights': VGG19_Weights.IMAGENET1K_V1,
-        'wandb_init': {'project': 'paper_initial_tests',
+        'comet_init': {'project': 'paper_initial_tests',
                        'name': model_name,
                        'tags': ['vgg19', 'IMAGENET1K_V1', 'Adam']}
     }

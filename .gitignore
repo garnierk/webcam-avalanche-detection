@@ -131,6 +131,9 @@ dmypy.json
 # wandb files
 /wandb
 
+# Comet files
+/comet_ml
+
 # PyTorch models
 *.pth
 **/config.json

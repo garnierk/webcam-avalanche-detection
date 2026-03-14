@@ -21,7 +21,7 @@ BASE_CFG = {
     'test_dir': DATA_ROOT+'/test/images',
     'train_dir': DATA_ROOT+'/train/images',
     'train_transforms': None,
-    'use_wandb': True
+    'use_comet': True
 }
 
 IM_SIZES = [1120, 896, 672, 448, 224]
@@ -37,7 +37,7 @@ def _vgg_model_name(input_size: int):
 
 
 def resnet_imsize_experiment(input_size: int, weights=ResNet101_Weights.IMAGENET1K_V2,
-                             wandb_project: str = 'avalanche_segmentation_image_size'):
+                             comet_project: str = 'avalanche_segmentation_image_size'):
     '''Train ResNet{resnet_version} models for the given image input size (in px)'''
     model_name = _resnet_model_name(input_size)
     resnet_config = {
@@ -46,7 +46,7 @@ def resnet_imsize_experiment(input_size: int, weights=ResNet101_Weights.IMAGENET
         'full_size': int(input_size*1.05),
         'architecture': f'ResNet101',
         'weights': weights,
-        'wandb_init': {'project': wandb_project,
+        'comet_init': {'project': comet_project,
                        'name': model_name,
                        'tags': ['ResNet', 'IMAGENET1K_V2', 'Adam']}
     }
@@ -65,7 +65,7 @@ def vgg_imsize_experiment(input_size: int, weights=None):
         'full_size': int(input_size*1.05),
         'architecture': f'vgg19',
         'weights': weights,
-        'wandb_init': {'project': 'paper_initial_tests',
+        'comet_init': {'project': 'paper_initial_tests',
                        'name': model_name,
                        'tags': [f'vgg19', 'IMAGENET1K_V1', 'Adam']}
     }

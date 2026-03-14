@@ -1,10 +1,10 @@
 import os
 from typing import Any, Dict, List, Literal, Tuple, Union
 
+from comet_ml import Experiment
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import wandb
 from torch import Tensor
 from tqdm import tqdm
 
@@ -14,7 +14,7 @@ from classification.train.train_utils.consts import (BEST_VALID_ACC, ES_EPOCH,
                                                      EarlyStoppingInfo,
                                                      ImageLoader, ModelType,
                                                      OptimizerType, ScoreKind,
-                                                     WandbScoreDict)
+                                                     CometScoreDict)
 from classification.train.train_utils.dataloaders import create_data_loaders
 from classification.train.train_utils.log_scores import (
     log_epoch_scores, log_scores_binaryclass, log_scores_multiclass)
@@ -62,7 +62,7 @@ class PytorchModel(object):
                  num_workers: int = 16, optimizer: str = 'Adam',
                  save_model_path: str = None, test_dir: str = '.data/test',
                  train_dir: str = '.data/train', train_transforms: Dict[str, bool] = None,
-                 use_wandb: bool = False, wandb_init: Dict = {'project': 'avalanche_detection'},
+                 use_comet: bool = False, comet_init: Dict = {'project': 'avalanche_detection'},
                  weights=None):
         """
 
@@ -81,7 +81,7 @@ class PytorchModel(object):
         self.early_stopping_path = early_stopping_path
         self.epochs = epochs
         self.input_size = input_size
-        self.use_wandb = use_wandb
+        self.use_comet = use_comet
         self.full_size = full_size
         self.lr = lr
         self.num_classes = num_classes
@@ -102,17 +102,19 @@ class PytorchModel(object):
         else:
             self.image_loader = default_image_loader
 
-        # Initialise wandb and log all non-callable class variables
-        if self.use_wandb:
-            wandb.init(**wandb_init)
-            wandb.config.update({k: v for k, v in self.__dict__.items(
-            ) if not k.startswith('__') and not callable(k)})
-            wandb.config.update({
-                'architecture': architecture,
-                'load_model_path': load_model_path,
-                'optimizer': optimizer,
-                'weights': weights,
+        # Initialise comet and log all non-callable class variables
+        if self.use_comet:
+
+            self.experiment = Experiment(
+                api_key=os.getenv('COMET_API_KEY'), project_name=comet_init['project'])
+            self.experiment.log_parameters({
+                **{k: v for k, v in self.__dict__.items() if not k.startswith('__')},
+                "architecture": architecture,
+                "load_model_path": load_model_path,
+                "optimizer": optimizer,
+                "weights": weights,
             })
+
 
         # Check that paths to save models to are in directories which exist
         for model_path in [early_stopping_path, save_model_path]:
@@ -149,19 +151,19 @@ class PytorchModel(object):
                                                                             optimizer=optimizer)
 
     def _initialise_training_run(self):
-        '''Calculate scores before training starts, log initial scores to wandb, and set up early stopping dict.'''
+        '''Calculate scores before training starts, log initial scores to comet, and set up early stopping dict.'''
         # Measure before training starts
         valid_score_dict = self._eval_valid(epoch=-1, suppress_logging=False)
         test_score_dict = self._eval_test(epoch=-1, suppress_logging=False)
 
-        if (self.use_wandb):
+        if (self.use_comet):
             # Initialise train scores to test scores to set a starting point
             train_score_dict = {
                 k.replace(ScoreKind.TEST.value, ScoreKind.TRAIN.value): v for k, v in test_score_dict.items()}
 
-            wandb_dict = {**train_score_dict, **
+            comet_dict = {**train_score_dict, **
                           test_score_dict, **valid_score_dict}
-            wandb.log(wandb_dict)
+            self.experiment.log_metrics(comet_dict)
 
         # Initialise early stopping
         if self.early_stopping_path is not None:
@@ -289,13 +291,13 @@ class PytorchModel(object):
 
     def _eval_valid(self, epoch: int, suppress_logging: bool = False, calculate_weighted_scores: bool = False) -> Dict[str, Any]:
         """Wraper function for validation testing during training"""
-        score_dict: WandbScoreDict = self._test_model(
+        score_dict: CometScoreDict = self._test_model(
             self.model, self.valid_data_loader, self.criterion, epoch, kind=ScoreKind.VALIDATION,
             suppress_logging=suppress_logging, calculate_weighted_scores=calculate_weighted_scores)
 
         return prepend_split_kind(score_dict, prefix='validation')
 
-    def _test_model(self, model, testloader, criterion, epoch: int, **kwargs) -> WandbScoreDict:
+    def _test_model(self, model, testloader, criterion, epoch: int, **kwargs) -> CometScoreDict:
         """Run a round of testing/validation with the current model state"""
         return test_model(self.device, model, testloader, criterion, epoch=epoch, none_label=self.class_to_idx[NONE],
                           num_classes=self.num_classes, idx_to_class=self.idx_to_class, **kwargs)
@@ -319,12 +321,11 @@ class PytorchModel(object):
             log_epoch_scores(train_scores=train_score_dict,
                              test_scores=test_score_dict, valid_scores=valid_score_dict)
 
-            if (self.use_wandb):
-                # Log scores to wandb
-                wandb_dict = {**train_score_dict, **
+            if (self.use_comet):
+                # Log scores to comet
+                comet_dict = {**train_score_dict, **
                               test_score_dict, **valid_score_dict}
-                wandb.log(wandb_dict)
-
+                self.experiment.log_metrics(comet_dict, step=epoch)
             # If validation accuracy is a new best value, update early stopping information
             valid_accuracy = valid_score_dict['validation/accuracy']
             best_valid_acc = self.early_stopping_info[BEST_VALID_ACC]
@@ -352,7 +353,8 @@ class PytorchModel(object):
             torch.save(self.model.state_dict(), self.save_model_path)
 
         # Finish run (needed to train multiple models from the same script)
-        wandb.finish()
+        if self.use_comet:
+            self.experiment.end()
 
         return self.mean_std, self.early_stopping_info
 
@@ -378,7 +380,7 @@ def default_image_loader(path: str):
     return img
 
 
-def prepend_split_kind(score_dict: WandbScoreDict, prefix: str = None) -> Dict[str, Any]:
+def prepend_split_kind(score_dict: CometScoreDict, prefix: str = None) -> Dict[str, Any]:
     '''Prepend "prefix/" to all keys of the score_dict except epoch.'''
     return {new_key: val for key, val in score_dict.items() if (
         new_key := key if key == 'epoch' else f'{prefix}/{key}')}

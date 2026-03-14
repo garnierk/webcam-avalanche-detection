@@ -3,13 +3,13 @@ from typing import Any, Dict, List, Tuple
 import sklearn.metrics as metrics
 
 from classification.train.train_utils.consts import (ScoreKind,
-                                                     WandbBinaryDict,
-                                                     WandbMulticlassDict)
+                                                     CometBinaryDict,
+                                                     CometMulticlassDict)
 
 
 def log_scores_binaryclass(targets: List[float], predicted: List[float], kind: ScoreKind,
-                           epoch: int, suppress_logging: bool = False, calculate_weighted_scores: bool = False) -> WandbBinaryDict:
-    """Log binary scores to console and return wandb dictionary
+                           epoch: int, suppress_logging: bool = False, calculate_weighted_scores: bool = False) -> CometBinaryDict:
+    """Log binary scores to console and return comet dictionary
     N.B. expects avalanche classes to have label 0 and non-avalanche to have label 1
 
     Args:
@@ -21,7 +21,7 @@ def log_scores_binaryclass(targets: List[float], predicted: List[float], kind: S
         calculate_weighted_scores (bool) : if True, also calculate scores weighted by support for each label.
 
     Returns:
-        (WandbBinaryDict) A dict of score values.
+        (CometBinaryDict) A dict of score values.
     """
     accuracy = metrics.accuracy_score(targets, predicted) * 100
     precision, recall, f1score = _precision_recall_f1(
@@ -30,7 +30,7 @@ def log_scores_binaryclass(targets: List[float], predicted: List[float], kind: S
     tp, fn, fp, tn = metrics.confusion_matrix(targets, predicted).ravel()
 
     bin_ = 'binary/'  # Prefix for binary scores
-    wandb_dict = {"Epoch": epoch+1, f"{bin_}accuracy": accuracy,
+    comet_dict = {"Epoch": epoch+1, f"{bin_}accuracy": accuracy,
                   f"{bin_}precision": precision, f"{bin_}recall": recall, f"{bin_}f1": f1score}
 
     if not suppress_logging:
@@ -49,17 +49,17 @@ def log_scores_binaryclass(targets: List[float], predicted: List[float], kind: S
         w_accuracy = metrics.balanced_accuracy_score(targets, predicted) * 100
         w_precision, w_recall, w_f1score = _precision_recall_f1(
             targets, predicted,  average='weighted')
-        wandb_dict.update({f"{bin_}weighted_accuracy": w_accuracy,
+        comet_dict.update({f"{bin_}weighted_accuracy": w_accuracy,
                            f"{bin_}weighted_f1": w_f1score,
                            f"{bin_}weighted_precision": w_precision,
                            f"{bin_}weighted_recall": w_recall})
-    return wandb_dict
+    return comet_dict
 
 
 def log_scores_multiclass(targets: List[float] = [], predicted: List[float] = [],
                           kind: ScoreKind = None, epoch: int = None, idx_to_class: Dict[int, str] = {},
-                          suppress_logging: bool = False, calculate_weighted_scores: bool = False) -> WandbMulticlassDict:
-    """Log multiclass scores to console and return wandb dictionary
+                          suppress_logging: bool = False, calculate_weighted_scores: bool = False) -> CometMulticlassDict:
+    """Log multiclass scores to console and return comet dictionary
 
     Args:
         targets ([float])             : the true labels.
@@ -71,7 +71,7 @@ def log_scores_multiclass(targets: List[float] = [], predicted: List[float] = []
         calculate_weighted_scores (bool) : if True, also calculate scores weighted by support for each label..
 
     Returns:
-        (WandbMulticlassDict) A dict of score values.
+        (cometMulticlassDict) A dict of score values.
     """
     if not suppress_logging:
         print(f"----- {kind.value} ----- epoch: {epoch + 1} -----")
@@ -99,7 +99,7 @@ def log_scores_multiclass(targets: List[float] = [], predicted: List[float] = []
     conf_matrix = metrics.confusion_matrix(
         targets, predicted, labels=labels)
 
-    wandb_dict = {"Epoch": epoch+1, "accuracy": accuracy,
+    comet_dict = {"Epoch": epoch+1, "accuracy": accuracy,
                   "precision": um_precision, "recall": um_recall, "f1": um_f1score}
     if not suppress_logging:
         print(f"Accuracy: {accuracy:.3f}")
@@ -109,11 +109,11 @@ def log_scores_multiclass(targets: List[float] = [], predicted: List[float] = []
             print(
                 f"Precision: {precision[i]:.3f}, Recall: {recall[i]:.3f}, F1: {f1score[i]:.3f}")
         label_precision = f"{idx_to_class[label]}/precision"
-        wandb_dict[label_precision] = precision[i]
+        comet_dict[label_precision] = precision[i]
         label_recall = f"{idx_to_class[label]}/recall"
-        wandb_dict[label_recall] = recall[i]
+        comet_dict[label_recall] = recall[i]
         label_f1 = f"{idx_to_class[label]}/f1"
-        wandb_dict[label_f1] = f1score[i]
+        comet_dict[label_f1] = f1score[i]
 
     if not suppress_logging:
         print("----- Unweighted mean -----")
@@ -134,11 +134,11 @@ def log_scores_multiclass(targets: List[float] = [], predicted: List[float] = []
         w_accuracy = metrics.balanced_accuracy_score(targets, predicted) * 100
         w_precision, w_recall, w_f1score = _precision_recall_f1(
             targets, predicted, average='weighted')
-        wandb_dict.update(
+        comet_dict.update(
             {"weighted_accuracy": w_accuracy, "weighted_f1": w_f1score,
              "weighted_precision": w_precision, "weighted_recall": w_recall})
 
-    return wandb_dict
+    return comet_dict
 
 
 def _precision_recall_f1(targets: List[float], predicted: List[float], **kwargs) -> Tuple[float, float, float]:

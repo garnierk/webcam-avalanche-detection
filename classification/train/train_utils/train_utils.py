@@ -11,7 +11,7 @@ from torchvision.datasets import ImageFolder
 from tqdm import tqdm
 
 from classification.train.train_utils.consts import (ImageLoader, ModelType,
-                                                     ScoreKind, WandbScoreDict)
+                                                     ScoreKind, CometScoreDict)
 from classification.train.train_utils.log_scores import (
     log_scores_binaryclass, log_scores_multiclass)
 
@@ -78,11 +78,11 @@ def calculate_mean_std(batch_size: int, image_loader: ImageLoader = None, full_s
 
 def test_model(device: str, model, testloader, criterion, epoch: int = 0, kind: Literal[ScoreKind.TEST, ScoreKind.VALIDATION] = None,
                suppress_logging: bool = False, none_label: int = 2, num_classes: int = 0,
-               idx_to_class: Dict[int, str] = None, calculate_weighted_scores: bool = False) -> WandbScoreDict:
+               idx_to_class: Dict[int, str] = None, calculate_weighted_scores: bool = False) -> CometScoreDict:
     """Run a round of testing/validation with the current model state
 
     Returns:
-        (WandbScoreDict) a dict of the calculated scores.
+        (CometScoreDict) a dict of the calculated scores.
     """
     model.eval()
     if not suppress_logging:
@@ -132,21 +132,21 @@ def test_model(device: str, model, testloader, criterion, epoch: int = 0, kind: 
         epoch_preds_test == none_label).type(torch.uint8)
 
     # Get logging dicts for multi/binary class
-    wandb_dict = log_scores_multiclass(epoch_labels_test.tolist(), epoch_preds_test.tolist(),
+    comet_dict = log_scores_multiclass(epoch_labels_test.tolist(), epoch_preds_test.tolist(),
                                        kind=kind, epoch=epoch, idx_to_class=idx_to_class,
                                        suppress_logging=suppress_logging, calculate_weighted_scores=calculate_weighted_scores)
 
     if num_classes > 2:
-        wandb_dict_binary = log_scores_binaryclass(epoch_labels_binary_test.tolist(),
+        comet_dict_binary = log_scores_binaryclass(epoch_labels_binary_test.tolist(),
                                                    epoch_preds_binary_test.tolist(), kind=kind, epoch=epoch,
                                                    suppress_logging=suppress_logging, calculate_weighted_scores=calculate_weighted_scores)
     else:
-        wandb_dict_binary = {}
+        comet_dict_binary = {}
 
     # Calculate loss and accuracy for the complete epoch
     epoch_loss = test_running_loss / counter
 
-    score_dict: WandbScoreDict = {**wandb_dict, **wandb_dict_binary}
+    score_dict: CometScoreDict = {**comet_dict, **comet_dict_binary}
     score_dict['loss'] = epoch_loss
     return score_dict
 
