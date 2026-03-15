@@ -15,10 +15,10 @@ from torchvision.models import (ResNet18_Weights, ResNet34_Weights,
 IM_SIZE = 704
 '''Network input size'''
 
-DEFAULT_DATA_ROOT = '.data'
+DEFAULT_DATA_ROOT = os.environ.get('AVALANCHE_DATA_DIR', '.data')
 '''Default folder containing /train and /test image folders'''
 
-DEFAULT_PROJECT_DIR = './classification/experiments'
+DEFAULT_PROJECT_DIR = os.environ.get('AVALANCHE_PROJECT_DIR', './classification/experiments')
 '''Default project output directory (contains model folders and benchmark csv)'''
 
 
@@ -48,6 +48,18 @@ def _base_cfg(data_root: str) -> Dict[str, Any]:
         'input_size': IM_SIZE,
         'full_size': int(IM_SIZE * 1.05),
     }
+
+
+def _validate_data_root(data_root: str):
+    '''Fail fast if expected split folders do not exist.'''
+    train_dir = os.path.join(data_root, 'train', 'images')
+    test_dir = os.path.join(data_root, 'test', 'images')
+    if not os.path.exists(train_dir) or not os.path.exists(test_dir):
+        raise FileNotFoundError(
+            'Expected split dataset folders were not found. '
+            f'Checked train_dir={train_dir} and test_dir={test_dir}. '
+            'Run the split utility first and/or pass an explicit --data-dir path.'
+        )
 
 BENCHMARK_MODELS: List[Tuple[str, Any]] = [
     ('ResNet152', ResNet152_Weights.IMAGENET1K_V2),
@@ -162,9 +174,14 @@ def _parse_args():
 
 if __name__ == '__main__':
     args = _parse_args()
-    models_dir, results_file = _build_paths(args.project_dir)
+    data_dir = os.path.abspath(args.data_dir)
+    project_dir = os.path.abspath(args.project_dir)
+
+    _validate_data_root(data_dir)
+
+    models_dir, results_file = _build_paths(project_dir)
     os.makedirs(models_dir, exist_ok=True)
-    base_cfg = _base_cfg(args.data_dir)
+    base_cfg = _base_cfg(data_dir)
 
     # Train models
     for (architecture, weights) in BENCHMARK_MODELS:

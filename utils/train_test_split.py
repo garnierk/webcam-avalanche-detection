@@ -28,10 +28,16 @@ if __name__ == '__main__':
         default=SOURCE_DIR,
         help='Dataset root containing train.txt, test.txt and images/.',
     )
+    parser.add_argument(
+        '--output-dir',
+        type=str,
+        default=DEST_DIR,
+        help='Output root where train/images and test/images will be created.',
+    )
     args = parser.parse_args()
 
     source_dir = args.source_dir
-    dest_dir = source_dir
+    dest_dir = args.output_dir
     dest_train = os.path.join(dest_dir, 'train', 'images')
     dest_test = os.path.join(dest_dir, 'test', 'images')
 
