@@ -1,3 +1,4 @@
+import argparse
 import os
 import shutil
 
@@ -19,9 +20,24 @@ LABELS = ['glide', 'loose', 'none', 'slab']
 if __name__ == '__main__':
     '''Generate train/test split for the image classification task'''
 
+    parser = argparse.ArgumentParser(
+        description='Generate train/test image split folders from split text files.')
+    parser.add_argument(
+        '--source-dir',
+        type=str,
+        default=SOURCE_DIR,
+        help='Dataset root containing train.txt, test.txt and images/.',
+    )
+    args = parser.parse_args()
+
+    source_dir = args.source_dir
+    dest_dir = source_dir
+    dest_train = os.path.join(dest_dir, 'train', 'images')
+    dest_test = os.path.join(dest_dir, 'test', 'images')
+
     # Check that train/test split txt files exist
-    train_split = os.path.join(SOURCE_DIR, 'train.txt')
-    test_split = os.path.join(SOURCE_DIR, 'test.txt')
+    train_split = os.path.join(source_dir, 'train.txt')
+    test_split = os.path.join(source_dir, 'test.txt')
     assert os.path.exists(train_split), f'File not found: {train_split}'
     assert os.path.exists(test_split), f'File not found: {test_split}'
 
@@ -32,7 +48,7 @@ if __name__ == '__main__':
         test_ims = [line.rstrip('\n') for line in f]
 
     # Delete and re-create output directories
-    for train_test in [DEST_TRAIN, DEST_TEST]:
+    for train_test in [dest_train, dest_test]:
         try:
             shutil.rmtree(train_test)
         except:
@@ -42,7 +58,7 @@ if __name__ == '__main__':
 
     # Copy images into destination directory
     print('Generating train/test split...')
-    ims_directory = os.path.join(SOURCE_DIR, 'images')
+    ims_directory = os.path.join(source_dir, 'images')
     for root, dirnames, filenames in os.walk(ims_directory):
         for file_name in filenames:
             assert file_name.lower().endswith(
@@ -52,9 +68,9 @@ if __name__ == '__main__':
             path_tail = '/' + root.split('/')[-1] + f'/{file_name}'
             target_dir = None
             if path_tail in train_ims:
-                target_dir = DEST_TRAIN
+                target_dir = dest_train
             elif path_tail in test_ims:
-                target_dir = DEST_TEST
+                target_dir = dest_test
             else:
                 raise FileNotFoundError(
                     f'Image {path_tail} not in train or test split')
