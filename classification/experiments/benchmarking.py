@@ -34,7 +34,7 @@ def _base_cfg(data_root: str) -> Dict[str, Any]:
     '''Default config to use for training runs.'''
     data_root = data_root.rstrip('/\\')
     return {
-        'batch_size': 10,
+        'batch_size': 20,
         'epochs': 40,
         'image_loader': None,
         'lr': 2.25e-5,
