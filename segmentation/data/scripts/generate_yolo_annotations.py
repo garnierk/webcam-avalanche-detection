@@ -298,10 +298,10 @@ def check_dataset_layout(data_dir: str) -> None:
 def sanity_check_generated_labels(data_dir: str) -> None:
     """
     Petit check post-génération:
-    - classes uniquement 0,1,2
+    - classes uniquement dans [0, len(YOLO_CLASSES)-1]
     - bbox dans [0,1]
     """
-    allowed = {0, 1, 2}
+    allowed = set(range(len(YOLO_CLASSES)))
     label_roots = [
         os.path.join(data_dir, "train", "labels"),
         os.path.join(data_dir, "test", "labels"),
@@ -355,33 +355,6 @@ def sanity_check_generated_labels(data_dir: str) -> None:
             print("  ", e)
     else:
         print("[OK] Generated labels passed sanity check.")
-
-
-#########
-# Main pipeline
-#########
-
-def prepare_dataset(data_dir: str, output_dir: str, source_dir: str, seeds: Iterable[int]) -> None:
-    data_dir = os.path.abspath(data_dir)
-    output_dir = os.path.abspath(output_dir)
-
-    check_dataset_layout(data_dir)
-
-    # 1) write labels under train/labels and test/labels
-    convert_annotation_files(data_dir=data_dir)
-
-    # 2) optional sanity check
-    sanity_check_generated_labels(data_dir=data_dir)
-
-    # 3) recreate split dir
-    _safe_rmtree(output_dir)
-    os.makedirs(output_dir, exist_ok=False)
-
-    # 4) create split txt + yaml for each seed
-    for seed in seeds:
-        create_train_valid_split(seed, data_dir=data_dir, dest_dir=output_dir)
-        yaml_path = write_dataset_yaml(seed, dest_dir=output_dir, source_dir=source_dir)
-        print(f"YAML created: {yaml_path}")
 
 
 def parse_args():
