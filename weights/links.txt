@@ -1,7 +1,7 @@
-https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5n-seg.pt
-https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5s-seg.pt
-https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5m-seg.pt
-https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5l-seg.pt
+https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5n.pt
+https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5s.pt
+https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5m.pt
+https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5l.pt
 https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov3.pt
 https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov3-spp.pt
 https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov3-tiny.pt
