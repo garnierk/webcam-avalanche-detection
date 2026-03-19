@@ -1,0 +1,976 @@
+created virtual environment CPython3.10.13.final.0-64 in 503ms
+  creator CPython3Posix(dest=/localscratch/garnierk.8586419.0/.venv, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/garnierk/.local/share/virtualenv)
+    added seed packages: pip==26.0.1+computecanada, setuptools==80.7.1, wheel==0.46.3+computecanada
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+Looking in links: /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/x86-64-v4, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/x86-64-v3, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/generic, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic
+Requirement already satisfied: wheel>=0.38.0 in /localscratch/garnierk.8586419.0/.venv/lib/python3.10/site-packages (from -r requirements.txt (line 2)) (0.46.3+computecanada)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/x86-64-v3/Pillow-10.0.0+computecanada-cp310-cp310-linux_x86_64.whl (from -r requirements.txt (line 3))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/generic/numpy-1.24.4+computecanada-cp310-cp310-linux_x86_64.whl (from -r requirements.txt (line 4))
+Requirement already satisfied: opencv-python==4.8.1.* in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcc12/opencv/4.8.1/lib/python3.10/site-packages (from -r requirements.txt (line 5)) (4.8.1)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/tqdm-4.64.1+computecanada-py2.py3-none-any.whl (from -r requirements.txt (line 6))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/scikit_learn-1.2.1+computecanada-cp310-cp310-linux_x86_64.whl (from -r requirements.txt (line 7))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/comet_ml-3.47.1+computecanada-py3-none-any.whl (from -r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/x86-64-v3/pandas-1.5.3+computecanada-cp310-cp310-linux_x86_64.whl (from -r requirements.txt (line 9))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/Jinja2-3.1.2+computecanada-py3-none-any.whl (from -r requirements.txt (line 10))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/gitpython-3.1.46+computecanada-py3-none-any.whl (from -r requirements.txt (line 14))
+Requirement already satisfied: ipython in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from -r requirements.txt (line 15)) (8.25.0+computecanada)
+Requirement already satisfied: matplotlib>=3.2.2 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages (from -r requirements.txt (line 16)) (3.9.0+computecanada)
+Requirement already satisfied: psutil in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from -r requirements.txt (line 17)) (5.9.8)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/x86-64-v3/PyYAML-6.0.2+computecanada-cp310-cp310-linux_x86_64.whl (from -r requirements.txt (line 18))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/requests-2.32.5+computecanada-py3-none-any.whl (from -r requirements.txt (line 19))
+Requirement already satisfied: scipy>=1.4.1 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages (from -r requirements.txt (line 20)) (1.13.1+computecanada)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/thop-0.1.1.post2209072238+computecanada-py3-none-any.whl (from -r requirements.txt (line 21))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/x86-64-v3/torch-2.6.0+computecanada-cp310-cp310-linux_x86_64.whl (from -r requirements.txt (line 22))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/generic/torchvision-0.21.0+computecanada-cp310-cp310-linux_x86_64.whl (from -r requirements.txt (line 23))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/tensorboard-2.20.0+computecanada-py3-none-any.whl (from -r requirements.txt (line 26))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/seaborn-0.13.2+computecanada-py3-none-any.whl (from -r requirements.txt (line 29))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/setuptools-81.0.0+computecanada-py3-none-any.whl (from -r requirements.txt (line 32))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/joblib-1.5.3+computecanada-py3-none-any.whl (from scikit-learn==1.2.1->-r requirements.txt (line 7))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/threadpoolctl-3.6.0+computecanada-py3-none-any.whl (from scikit-learn==1.2.1->-r requirements.txt (line 7))
+Requirement already satisfied: python-dateutil>=2.8.1 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages (from pandas==1.5.3->-r requirements.txt (line 9)) (2.9.0.post0+computecanada)
+Requirement already satisfied: pytz>=2020.1 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages (from pandas==1.5.3->-r requirements.txt (line 9)) (2024.1+computecanada)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/MarkupSafe-2.1.5+computecanada-cp310-cp310-linux_x86_64.whl (from jinja2==3.1.2->-r requirements.txt (line 10))
+Requirement already satisfied: packaging>=24.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages (from wheel>=0.38.0->-r requirements.txt (line 2)) (24.1+computecanada)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/everett-3.1.0+computecanada-py2.py3-none-any.whl (from everett[ini]<3.2.0,>=1.0.1->comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/jsonschema-4.26.0+computecanada-py3-none-any.whl (from comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/python_box-6.1.0+computecanada-cp310-cp310-linux_x86_64.whl (from comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/requests_toolbelt-1.0.0+computecanada-py2.py3-none-any.whl (from comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/semantic_version-2.10.0+computecanada-py2.py3-none-any.whl (from comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/sentry_sdk-2.55.0+computecanada-py2.py3-none-any.whl (from comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/simplejson-3.19.3+computecanada-cp310-cp310-linux_x86_64.whl (from comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/urllib3-2.6.3+computecanada-py3-none-any.whl (from comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/wrapt-1.17.2+computecanada-cp310-cp310-linux_x86_64.whl (from comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/wurlitzer-3.1.1+computecanada-py3-none-any.whl (from comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/dulwich-0.23.2+computecanada-py3-none-any.whl (from comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/rich-14.3.3+computecanada-py3-none-any.whl (from comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/configobj-5.0.9+computecanada-py2.py3-none-any.whl (from everett[ini]<3.2.0,>=1.0.1->comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/gitdb-4.0.12+computecanada-py3-none-any.whl (from gitpython->-r requirements.txt (line 14))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/smmap-5.0.3+computecanada-py3-none-any.whl (from gitdb<5,>=4.0.1->gitpython->-r requirements.txt (line 14))
+Requirement already satisfied: decorator in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from ipython->-r requirements.txt (line 15)) (5.1.1+computecanada)
+Requirement already satisfied: jedi>=0.16 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from ipython->-r requirements.txt (line 15)) (0.19.1+computecanada)
+Requirement already satisfied: matplotlib-inline in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from ipython->-r requirements.txt (line 15)) (0.1.7+computecanada)
+Requirement already satisfied: prompt-toolkit<3.1.0,>=3.0.41 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from ipython->-r requirements.txt (line 15)) (3.0.47+computecanada)
+Requirement already satisfied: pygments>=2.4.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from ipython->-r requirements.txt (line 15)) (2.18.0+computecanada)
+Requirement already satisfied: stack-data in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from ipython->-r requirements.txt (line 15)) (0.6.3+computecanada)
+Requirement already satisfied: traitlets>=5.13.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from ipython->-r requirements.txt (line 15)) (5.14.3+computecanada)
+Requirement already satisfied: exceptiongroup in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from ipython->-r requirements.txt (line 15)) (1.2.1+computecanada)
+Requirement already satisfied: typing-extensions>=4.6 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from ipython->-r requirements.txt (line 15)) (4.12.2+computecanada)
+Requirement already satisfied: pexpect>4.3 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from ipython->-r requirements.txt (line 15)) (4.9.0+computecanada)
+Requirement already satisfied: wcwidth in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from prompt-toolkit<3.1.0,>=3.0.41->ipython->-r requirements.txt (line 15)) (0.2.13+computecanada)
+Requirement already satisfied: contourpy>=1.0.1 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages (from matplotlib>=3.2.2->-r requirements.txt (line 16)) (1.2.1+computecanada)
+Requirement already satisfied: cycler>=0.10 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages (from matplotlib>=3.2.2->-r requirements.txt (line 16)) (0.12.1+computecanada)
+Requirement already satisfied: fonttools>=4.22.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages (from matplotlib>=3.2.2->-r requirements.txt (line 16)) (4.53.0+computecanada)
+Requirement already satisfied: kiwisolver>=1.3.1 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages (from matplotlib>=3.2.2->-r requirements.txt (line 16)) (1.4.5+computecanada)
+Requirement already satisfied: pyparsing>=2.3.1 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages (from matplotlib>=3.2.2->-r requirements.txt (line 16)) (3.1.2+computecanada)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/charset_normalizer-3.4.6+computecanada-py3-none-any.whl (from requests>=2.23.0->-r requirements.txt (line 19))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/idna-3.11+computecanada-py3-none-any.whl (from requests>=2.23.0->-r requirements.txt (line 19))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/certifi-2026.2.25+computecanada-py3-none-any.whl (from requests>=2.23.0->-r requirements.txt (line 19))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/filelock-3.25.2+computecanada-py3-none-any.whl (from torch>=1.7.0->-r requirements.txt (line 22))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/networkx-3.6.1+computecanada-py3-none-any.whl (from torch>=1.7.0->-r requirements.txt (line 22))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/fsspec-2026.2.0+computecanada-py3-none-any.whl (from torch>=1.7.0->-r requirements.txt (line 22))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/sympy-1.13.1+computecanada-py3-none-any.whl (from torch>=1.7.0->-r requirements.txt (line 22))
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages (from sympy==1.13.1->torch>=1.7.0->-r requirements.txt (line 22)) (1.3.0+computecanada)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/x86-64-v3/Pillow_SIMD-9.5.0.post2+computecanada-cp310-cp310-linux_x86_64.whl (from torchvision>=0.8.1->-r requirements.txt (line 23))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/absl_py-2.4.0+computecanada-py3-none-any.whl (from tensorboard>=2.4.1->-r requirements.txt (line 26))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/grpcio-1.67.0+computecanada-cp310-cp310-linux_x86_64.whl (from tensorboard>=2.4.1->-r requirements.txt (line 26))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/markdown-3.10.2+computecanada-py3-none-any.whl (from tensorboard>=2.4.1->-r requirements.txt (line 26))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/x86-64-v3/protobuf-5.29.3+computecanada-cp310-cp310-linux_x86_64.whl (from tensorboard>=2.4.1->-r requirements.txt (line 26))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/tensorboard_data_server-0.7.2+computecanada-py3-none-linux_x86_64.whl (from tensorboard>=2.4.1->-r requirements.txt (line 26))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/werkzeug-3.1.6+computecanada-py3-none-any.whl (from tensorboard>=2.4.1->-r requirements.txt (line 26))
+Requirement already satisfied: parso<0.9.0,>=0.8.3 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from jedi>=0.16->ipython->-r requirements.txt (line 15)) (0.8.4+computecanada)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/attrs-25.4.0+computecanada-py3-none-any.whl (from jsonschema!=3.1.0,>=2.6.0->comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/jsonschema_specifications-2025.9.1+computecanada-py3-none-any.whl (from jsonschema!=3.1.0,>=2.6.0->comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/referencing-0.37.0+computecanada-py3-none-any.whl (from jsonschema!=3.1.0,>=2.6.0->comet_ml>=3.44.0->-r requirements.txt (line 8))
+INFO: pip is looking at multiple versions of jsonschema to determine which version is compatible with other requirements. This could take a while.
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/jsonschema-4.25.1+computecanada-py3-none-any.whl (from comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/generic/rpds_py-0.20.0+computecanada-cp310-cp310-linux_x86_64.whl (from jsonschema!=3.1.0,>=2.6.0->comet_ml>=3.44.0->-r requirements.txt (line 8))
+Requirement already satisfied: ptyprocess>=0.5 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from pexpect>4.3->ipython->-r requirements.txt (line 15)) (0.7.0+computecanada)
+Requirement already satisfied: six>=1.5 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages (from python-dateutil>=2.8.1->pandas==1.5.3->-r requirements.txt (line 9)) (1.16.0+computecanada)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/markdown_it_py-4.0.0+computecanada-py3-none-any.whl (from rich>=13.3.2->comet_ml>=3.44.0->-r requirements.txt (line 8))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/mdurl-0.1.2+computecanada-py3-none-any.whl (from markdown-it-py>=2.2.0->rich>=13.3.2->comet_ml>=3.44.0->-r requirements.txt (line 8))
+INFO: pip is looking at multiple versions of networkx to determine which version is compatible with other requirements. This could take a while.
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/networkx-3.6+computecanada-py3-none-any.whl (from torch>=1.7.0->-r requirements.txt (line 22))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/networkx-3.5+computecanada-py3-none-any.whl (from torch>=1.7.0->-r requirements.txt (line 22))
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/networkx-3.4.2+computecanada-py3-none-any.whl (from torch>=1.7.0->-r requirements.txt (line 22))
+Requirement already satisfied: executing>=1.2.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from stack-data->ipython->-r requirements.txt (line 15)) (2.0.1+computecanada)
+Requirement already satisfied: asttokens>=2.1.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from stack-data->ipython->-r requirements.txt (line 15)) (2.4.1+computecanada)
+Requirement already satisfied: pure-eval in /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/ipykernel/2024a/lib/python3.10/site-packages (from stack-data->ipython->-r requirements.txt (line 15)) (0.2.2+computecanada)
+Installing collected packages: everett, wurlitzer, wrapt, urllib3, tqdm, threadpoolctl, tensorboard-data-server, sympy, smmap, simplejson, setuptools, semantic-version, rpds-py, PyYAML, python-box, protobuf, pillow-simd, pillow, numpy, networkx, mdurl, MarkupSafe, markdown, joblib, idna, grpcio, fsspec, filelock, configobj, charset-normalizer, certifi, attrs, absl-py, werkzeug, sentry-sdk, requests, referencing, pandas, markdown-it-py, jinja2, gitdb, dulwich, torch, tensorboard, scikit-learn, rich, requests-toolbelt, jsonschema-specifications, gitpython, torchvision, thop, seaborn, jsonschema, comet_ml
+  Attempting uninstall: sympy
+    Found existing installation: sympy 1.12.1+computecanada
+    Not uninstalling sympy at /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages, outside environment /localscratch/garnierk.8586419.0/.venv
+    Can't uninstall 'sympy'. No files were found to uninstall.
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 80.7.1
+    Uninstalling setuptools-80.7.1:
+      Successfully uninstalled setuptools-80.7.1
+  Attempting uninstall: pillow
+    Found existing installation: pillow 10.3.0+computecanada
+    Not uninstalling pillow at /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages, outside environment /localscratch/garnierk.8586419.0/.venv
+    Can't uninstall 'pillow'. No files were found to uninstall.
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.26.4+computecanada
+    Not uninstalling numpy at /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages, outside environment /localscratch/garnierk.8586419.0/.venv
+    Can't uninstall 'numpy'. No files were found to uninstall.
+  Attempting uninstall: pandas
+    Found existing installation: pandas 2.2.1+computecanada
+    Not uninstalling pandas at /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2024a/lib/python3.10/site-packages, outside environment /localscratch/garnierk.8586419.0/.venv
+    Can't uninstall 'pandas'. No files were found to uninstall.
+
+Successfully installed MarkupSafe-2.1.5+computecanada PyYAML-6.0.2+computecanada absl-py-2.4.0+computecanada attrs-25.4.0+computecanada certifi-2026.2.25+computecanada charset-normalizer-3.4.6+computecanada comet_ml-3.47.1+computecanada configobj-5.0.9+computecanada dulwich-0.23.2+computecanada everett-3.1.0+computecanada filelock-3.25.2+computecanada fsspec-2026.2.0+computecanada gitdb-4.0.12+computecanada gitpython-3.1.46+computecanada grpcio-1.67.0+computecanada idna-3.11+computecanada jinja2-3.1.2+computecanada joblib-1.5.3+computecanada jsonschema-4.25.1+computecanada jsonschema-specifications-2025.9.1+computecanada markdown-3.10.2+computecanada markdown-it-py-4.0.0+computecanada mdurl-0.1.2+computecanada networkx-3.4.2+computecanada numpy-1.24.4+computecanada pandas-1.5.3+computecanada pillow-10.0.0+computecanada pillow-simd-9.5.0.post2+computecanada protobuf-5.29.3+computecanada python-box-6.1.0+computecanada referencing-0.37.0+computecanada requests-2.32.5+computecanada requests-toolbelt-1.0.0+computecanada rich-14.3.3+computecanada rpds-py-0.20.0+computecanada scikit-learn-1.2.1+computecanada seaborn-0.13.2+computecanada semantic-version-2.10.0+computecanada sentry-sdk-2.55.0+computecanada setuptools-81.0.0+computecanada simplejson-3.19.3+computecanada smmap-5.0.3+computecanada sympy-1.13.1+computecanada tensorboard-2.20.0+computecanada tensorboard-data-server-0.7.2+computecanada thop-0.1.1.post2209072238+computecanada threadpoolctl-3.6.0+computecanada torch-2.6.0+computecanada torchvision-0.21.0+computecanada tqdm-4.64.1+computecanada urllib3-2.6.3+computecanada werkzeug-3.1.6+computecanada wrapt-1.17.2+computecanada wurlitzer-3.1.1+computecanada
+Looking in links: /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/x86-64-v4, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/x86-64-v3, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo2023/generic, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic
+Obtaining file:///lustre09/project/6094000/garnierk/webcam-avalanche-detection
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: avalanche-detection
+  Building editable for avalanche-detection (pyproject.toml): started
+  Building editable for avalanche-detection (pyproject.toml): finished with status 'done'
+  Created wheel for avalanche-detection: filename=avalanche_detection-0.0.1-0.editable-py3-none-any.whl size=15221 sha256=b89ffd49436a6c4c4de6f9e393ccbb3e65d13558c3035b0d65855302868ee94c
+  Stored in directory: /tmp/pip-ephem-wheel-cache-lq6xgpk8/wheels/25/5d/2a/dcaf97f1a46abdddc9b827c254707587500afcb360157952cc
+Successfully built avalanche-detection
+Installing collected packages: avalanche-detection
+Successfully installed avalanche-detection-0.0.1
+Generating train/test split...
+Done
+[WARN] 68 label issues detected after generation:
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2021-01-18 kaunertal (30).txt', 1, 'outside_image', '2 0.1391893970 0.3834792123 0.2783787941 0.1958424508')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2021-01-20 roter kogel (25).txt', 1, 'outside_image', '2 0.3761279737 0.6679431072 0.7522559475 0.6641137856')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2021-01-22 poverer joechl (3).txt', 1, 'outside_image', '2 0.6113594891 0.5727571116 0.7772810219 0.8282275711')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2016-12-10 luesener fernerkogel (4).txt', 1, 'outside_image', '2 0.4362824675 0.6653318078 0.8725649351 0.4199084668')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2015-03-28 villgratental (7).txt', 1, 'outside_image', '2 0.8249664700 0.8306636156 0.3469286481 0.3386727689')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2015-04-07 urgtal (46).txt', 1, 'outside_image', '2 0.3211289092 0.4765446224 0.6422578185 0.3283752860')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2015-04-07 hochwanner (5).txt', 2, 'outside_image', '2 0.9605887876 0.5943935927 0.0788224249 0.0972540046')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2017-02-25 gleirschtal (5).txt', 1, 'outside_image', '2 0.4301166845 0.5566361556 0.8602333691 0.5091533181')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2020-01-30 kappl (3).txt', 2, 'outside_image', '2 0.1206173780 0.5594965675 0.2412347561 0.4736842105')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2018-01-10 kesselspitze (2).txt', 1, 'outside_image', '2 0.4786641929 0.6934487021 0.9573283859 0.6131025958')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2020-03-11 pitztal (5).txt', 3, 'outside_image', '2 0.9300429185 0.8689931350 0.1399141631 0.2551487414')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2021-01-31 schmirn (6).txt', 1, 'outside_image', '2 0.4148806330 0.5909610984 0.8297612661 0.5823798627')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2021-02-23 westtirol (114).txt', 3, 'outside_image', '2 0.6441647597 0.5234553776 0.7116704805 0.9530892449')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2015-02-10 staller sattel (5).txt', 2, 'outside_image', '2 0.8936359979 0.6195652174 0.2127280043 0.4061784897')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2017-02-07 brunnalm (1).txt', 1, 'outside_image', '2 0.2683141094 0.3689931350 0.5366282189 0.6922196796')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2017-02-07 brunnalm (1).txt', 3, 'outside_image', '2 0.1395587446 0.2425629291 0.2791174893 0.4805491991')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2022-02-04 planneralm (95).txt', 1, 'outside_image', '2 0.4996445815 0.6544622426 0.9992891631 0.6842105263')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2017-12-13 kerbodenabfahrt (7).txt', 1, 'outside_image', '2 0.3146660408 0.7030892449 0.4336239270 0.5938215103')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2016-02-02 oberland (45).txt', 3, 'outside_image', '2 0.7768878719 0.6767734554 0.4462242563 0.6464530892')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2020-12-15 hinterer grieskogel (11).txt', 1, 'outside_image', '2 0.4005029506 0.6481693364 0.8010059013 0.7036613272')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2021-01-22 poverer joechl (2).txt', 1, 'outside_image', '2 0.5369012318 0.5311816193 0.9261975365 0.6816192560')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2017-03-06 zettersfeld - faschingalm (1).txt', 1, 'outside_image', '2 0.3030780579 0.6035469108 0.6061561159 0.7929061785')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2020-02-09 murkarspitze (7).txt', 1, 'outside_image', '2 0.5000737661 0.7110983982 0.9998524678 0.5778032037')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2015-01-06 tote boeden (2).txt', 1, 'outside_image', '2 0.2422360248 0.6110812883 0.4844720497 0.5411042945')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2018-03-18 hinterbergkofel (2).txt', 1, 'outside_image', '2 0.4987722716 0.6043712660 0.9975445433 0.7746862733')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2021-02-09 tuxer alpen (34).txt', 3, 'outside_image', '2 0.0487862124 0.5943935927 0.0975724249 0.2002288330')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2015-01-01 kuehtai (21).txt', 1, 'outside_image', '2 0.3188405797 0.5011441648 0.6376811594 0.9977116705')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2021-02-01 hohe warte (25).txt', 1, 'outside_image', '2 0.4985716202 0.6172768879 0.9971432403 0.7654462243')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2021-02-22 kahlwandspitze (80).txt', 1, 'outside_image', '2 0.4899930987 0.6610621166 0.9799861974 0.6778757669')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2015-04-07 hochwanner (3).txt', 1, 'outside_image', '2 0.0979278433 0.1104118993 0.1958556867 0.1887871854')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2015-02-10 galtuer (1).txt', 6, 'outside_image', '2 0.1062801932 0.4202837423 0.2125603865 0.2797546012')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2021-03-28 navis (5).txt', 1, 'outside_image', '2 0.4801701070 0.5732265446 0.9603402141 0.7528604119')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2020-02-08 innere sommerwand (1).txt', 1, 'outside_image', '2 0.4996445815 0.5348970252 0.9992891631 0.3787185355')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2017-04-29 hochgurgl (5).txt', 1, 'outside_image', '2 0.0411020992 0.2974828375 0.0822041985 0.1006864989')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2018-01-24 westtirol (117).txt', 1, 'outside_image', '2 0.5542131445 0.6885169547 0.8915737110 0.6229660907')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2018-02-17 fotscher windegg (2).txt', 1, 'outside_image', '2 0.5060352832 0.5048381585 0.9842154132 0.9903236831')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2021-01-21 hoenig berwang (6).txt', 1, 'outside_image', '2 0.4662376948 0.7073304158 0.9253486464 0.5853391685')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2012-05-02 bremer huette (1).txt', 1, 'outside_image', '2 0.4699570815 0.5068649886 0.9399141631 0.6361556064')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/slab/2017-03-10 stabelebahn (1).txt', 1, 'outside_image', '2 0.3250517598 0.6629026074 0.6501035197 0.6741947853')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/loose/2017-02-16 venedigergruppe (4).txt', 1, 'outside_image', '1 0.1387003755 0.6876430206 0.2774007511 0.2059496568')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/loose/2018-04-14 peiderspitze (2).txt', 1, 'outside_image', '1 0.5772579202 0.5407068379 0.8454841596 0.9185863243')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/loose/2020-03-10 vermunttal (2).txt', 1, 'outside_image', '1 0.4996549344 0.4707630368 0.9993098689 0.9415260736')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/loose/2020-03-08 st. anton (2).txt', 4, 'outside_image', '2 0.9554385730 0.8541189931 0.0891228541 0.0675057208')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/loose/2022-04-28 stubacher sonnblick (4).txt', 1, 'outside_image', '1 0.7963386728 0.7574370709 0.4073226545 0.4828375286')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/loose/2022-05-16 gwaechtenhorn (41).txt', 1, 'outside_image', '1 0.1602433533 0.4822654462 0.3204867067 0.1819221968')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/loose/2018-01-05 matreier tauernhaus (2).txt', 5, 'outside_image', '1 0.4951820128 0.4820000131 0.9903640257 0.4617142596')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2021-01-29 steeg (1).txt', 1, 'outside_image', '0 0.4309750536 0.4691075515 0.8619501073 0.4141876430')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2018-12-19 steeg (1).txt', 1, 'outside_image', '0 0.4991489955 0.6391129032 0.9982979911 0.3077956989')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2015-04-03 holzgau (1).txt', 1, 'outside_image', '0 0.1377160904 0.6052631579 0.2754321809 0.4256292906')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2021-02-06 fallerschein (2).txt', 1, 'outside_image', '0 0.3343347639 0.5360411899 0.6686695279 0.4405034325')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2021-02-06 fallerschein (2).txt', 3, 'outside_image', '0 0.0691724785 0.5720823799 0.1383449571 0.1258581236')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2021-02-23 kals (4).txt', 1, 'outside_image', '0 0.4044393777 0.6487414188 0.7845493562 0.7025171625')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2020-12-10 bonn matreier huette (1).txt', 1, 'outside_image', '0 0.0762776506 0.2854691076 0.1525553013 0.5663615561')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2021-02-22 kaeferloch (2).txt', 3, 'outside_image', '0 0.8151689914 0.1127002288 0.0712446352 0.2254004577')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2019-01-15 elbigenalp (49).txt', 3, 'outside_image', '0 0.7944206009 0.7448512586 0.4111587983 0.2700228833')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2018-01-24 sellraintal (30).txt', 1, 'outside_image', '0 0.3604960762 0.5971102151 0.7209921525 0.8057795699')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2018-01-05 westtirol (36).txt', 4, 'outside_image', '0 0.5965501792 0.6663306452 0.2871863799 0.6673387097')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2021-01-05 st. jakob im defereggen (1).txt', 2, 'outside_image', '0 0.1326917918 0.3861556064 0.2653835837 0.1338672769')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2015-04-12 gargglerin (63).txt', 6, 'outside_image', '0 0.1113653699 0.0503432494 0.2196796339 0.1006864989')
+   ('/localscratch/garnierk.8586419.0/data/train/labels/glide/2019-01-22 hintertuxer gletscher (10).txt', 1, 'outside_image', '0 0.2238749047 0.7963386728 0.1899313501 0.4073226545')
+   ('/localscratch/garnierk.8586419.0/data/test/labels/slab/2017-03-05 schermerspitz - hochgurgl (3).txt', 2, 'outside_image', '2 0.5717736370 0.6156670747 0.8564527260 0.7686658507')
+   ('/localscratch/garnierk.8586419.0/data/test/labels/slab/2020-05-06 finstertaler schartenkopf (1).txt', 4, 'outside_image', '2 0.9010257634 0.7540045767 0.1979484733 0.0892448513')
+   ('/localscratch/garnierk.8586419.0/data/test/labels/slab/2020-10-19 zuckerhuettl (1).txt', 1, 'outside_image', '2 0.4996549344 0.7196702454 0.9993098689 0.5546012270')
+   ('/localscratch/garnierk.8586419.0/data/test/labels/glide/2021-01-25 enningkopf (2).txt', 1, 'outside_image', '0 0.4996445815 0.5200228833 0.9992891631 0.9553775744')
+   ('/localscratch/garnierk.8586419.0/data/test/labels/glide/2021-12-11 innerst (1).txt', 5, 'outside_image', '0 0.0631638948 0.7745995423 0.1263277897 0.0411899314')
+   ('/localscratch/garnierk.8586419.0/data/test/labels/glide/2020-01-16 leppleskofel (38).txt', 7, 'outside_image', '0 0.3340961098 0.5572082380 0.6681922197 0.4508009153')
+   ('/localscratch/garnierk.8586419.0/data/test/labels/glide/2020-12-10 st. jakob i. d. (3).txt', 3, 'outside_image', '0 0.9138076717 0.3627002288 0.1723846567 0.2196796339')
+   ('/localscratch/garnierk.8586419.0/data/test/labels/loose/2015-02-07 goldried (2).txt', 1, 'outside_image', '1 0.2273073989 0.5160183066 0.4546147979 0.6018306636')
+Txt files created with seed 50
+YAML created: /localscratch/garnierk.8586419.0/segmentation/data/avalanchesplit50.yaml
+Txt files created with seed 100
+YAML created: /localscratch/garnierk.8586419.0/segmentation/data/avalanchesplit100.yaml
+Txt files created with seed 150
+YAML created: /localscratch/garnierk.8586419.0/segmentation/data/avalanchesplit150.yaml
+=== CHECK YAML ===
+# Avalanches dataset information.
+
+# Train/val/test sets as file lists of absolute image paths
+path: /localscratch/garnierk.8586419.0/yolo_split
+train: /localscratch/garnierk.8586419.0/yolo_split/train100.txt
+val: /localscratch/garnierk.8586419.0/yolo_split/val100.txt
+test: /localscratch/garnierk.8586419.0/yolo_split/test100.txt
+
+# Classes
+nc: 3
+names:
+  0: glide
+  1: loose
+  2: slab
+=== CHECK CLASSES IN LABELS ===
+   2489 0
+   1827 1
+   2912 2
+TASK_ID       : 14
+MODEL_TAG     : yolo3_tiny
+WEIGHTS_PATH  : /home/garnierk/links/projects/def-boakes/garnierk/webcam-avalanche-detection/weights/yolov3-tiny.pt
+IMSIZE        : 448
+SEED          : 150
+RUN_NAME      : yolo3_tiny_448_p25s150
+DATASET_YAML  : /localscratch/garnierk.8586419.0/segmentation/data/avalanchesplit150.yaml
+[34m[1mgithub: [0mskipping check (not a git repository), for updates see https://github.com/ultralytics/yolov5
+[31m[1mrequirements:[0m /lustre09/project/6094000/garnierk/webcam-avalanche-detection/segmentation/requirements.txt not found, check failed.
+matrix with none:
+ [[          0           0           0           0           0]
+ [          0           0           0           0           0]
+ [          0           0           0           0           0]
+ [        231         147         248          89           0]
+ [          0           0           0           0           0]]
+binary confusion matrix:
+ [[          0           0]
+ [        626          89]]
+{'glide/recall': 0.0, 'glide/precision': nan, 'glide/f1': nan, 'loose/recall': 0.0, 'loose/precision': nan, 'loose/f1': nan, 'slab/recall': 0.0, 'slab/precision': nan, 'slab/f1': nan, 'none/recall': 1.0, 'none/precision': 0.12447552447552447, 'none/f1': 0.22139303482587064, 'recall_um': 0.25, 'precision_um': nan, 'f1_um': nan, 'accuracy': 0.12447552447552447, 'binary/accuracy': 0.12447552447552447, 'binary/recall': 0.0, 'binary/precision': nan, 'binary/f1': nan}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [   0.021645           0    0.028226]
+precision:  [    0.55556           0       0.875]
+f1 score:  [   0.041667           0    0.054687]
+unweighted 3Class scores:  {'withoutNone/recall': 0.01662360936554485, 'withoutNone/precision': 0.47685185185185186, 'withoutNone/f1Score': 0.03211805555555555}
+matrix with none:
+ [[          5           0           0           2           2]
+ [          0           0           0           0           0]
+ [          0           1           7           0           0]
+ [        210         145         241          87           0]
+ [         16           1           0           0           0]]
+binary confusion matrix:
+ [[         13           4]
+ [        613          87]]
+{'glide/recall': 0.021645021645021644, 'glide/precision': 0.5555555555555556, 'glide/f1': 0.041666666666666664, 'loose/recall': 0.0, 'loose/precision': nan, 'loose/f1': nan, 'slab/recall': 0.028225806451612902, 'slab/precision': 0.875, 'slab/f1': 0.0546875, 'none/recall': 0.9775280898876404, 'none/precision': 0.1273792093704246, 'none/f1': 0.22538860103626943, 'recall_um': 0.2568497294960687, 'precision_um': nan, 'f1_um': nan, 'accuracy': 0.13807531380753138, 'binary/accuracy': 0.1394700139470014, 'binary/recall': 0.020766773162939296, 'binary/precision': 0.7647058823529411, 'binary/f1': 0.04043545878693624}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [          0    0.027211    0.024194]
+precision:  [          0     0.57143         0.4]
+f1 score:  [          0    0.051948    0.045627]
+unweighted 3Class scores:  {'withoutNone/recall': 0.017134810913612755, 'withoutNone/precision': 0.3238095238095238, 'withoutNone/f1Score': 0.03252514279130248}
+matrix with none:
+ [[          0           0           0           0           0]
+ [          0           4           0           0           3]
+ [          4           0           6           1           0]
+ [        220         135         235          88           0]
+ [          7           8           7           0           0]]
+binary confusion matrix:
+ [[         14           4]
+ [        612          88]]
+{'glide/recall': 0.0, 'glide/precision': nan, 'glide/f1': nan, 'loose/recall': 0.027210884353741496, 'loose/precision': 0.5714285714285714, 'loose/f1': 0.051948051948051945, 'slab/recall': 0.024193548387096774, 'slab/precision': 0.5454545454545454, 'slab/f1': 0.04633204633204633, 'none/recall': 0.9887640449438202, 'none/precision': 0.12979351032448377, 'none/f1': 0.22946544980443284, 'recall_um': 0.2600421194211646, 'precision_um': nan, 'f1_um': nan, 'accuracy': 0.13649025069637882, 'binary/accuracy': 0.14206128133704735, 'binary/recall': 0.022364217252396165, 'binary/precision': 0.7777777777777778, 'binary/f1': 0.043478260869565216}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.08658    0.013605    0.056452]
+precision:  [    0.74074         0.4     0.73684]
+f1 score:  [    0.15504    0.026316     0.10487]
+unweighted 3Class scores:  {'withoutNone/recall': 0.05221238055339438, 'withoutNone/precision': 0.6258609486679663, 'withoutNone/f1Score': 0.09540782100709484}
+matrix with none:
+ [[         20           0           0           0           2]
+ [          3           1           0           0           1]
+ [          0           3          14           2           0]
+ [        149         130         232          87           0]
+ [         59          13           2           0           0]]
+binary confusion matrix:
+ [[         41           5]
+ [        585          87]]
+{'glide/recall': 0.08658008658008658, 'glide/precision': 0.9090909090909091, 'glide/f1': 0.15810276679841898, 'loose/recall': 0.006802721088435374, 'loose/precision': 0.2, 'loose/f1': 0.013157894736842105, 'slab/recall': 0.056451612903225805, 'slab/precision': 0.7368421052631579, 'slab/f1': 0.10486891385767791, 'none/recall': 0.9775280898876404, 'none/precision': 0.1454849498327759, 'none/f1': 0.25327510917030566, 'recall_um': 0.281840627614847, 'precision_um': 0.4978544910467107, 'f1_um': 0.13235117114081119, 'accuracy': 0.16991643454038996, 'binary/accuracy': 0.17827298050139276, 'binary/recall': 0.06549520766773163, 'binary/precision': 0.8913043478260869, 'binary/f1': 0.12202380952380953}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.12121    0.047619     0.10887]
+precision:  [    0.54902     0.31818     0.55102]
+f1 score:  [    0.19858     0.08284     0.18182]
+unweighted 3Class scores:  {'withoutNone/recall': 0.09256737885770144, 'withoutNone/precision': 0.47274061139607354, 'withoutNone/f1Score': 0.1544133262627534}
+matrix with none:
+ [[         28           0           3           3           7]
+ [          3           7           4           0           1]
+ [          2           3          26           4           3]
+ [        118         104         179          83           0]
+ [         80          33          36           0           0]]
+binary confusion matrix:
+ [[         76          18]
+ [        550          83]]
+{'glide/recall': 0.12121212121212122, 'glide/precision': 0.6829268292682927, 'glide/f1': 0.2058823529411765, 'loose/recall': 0.047619047619047616, 'loose/precision': 0.4666666666666667, 'loose/f1': 0.08641975308641976, 'slab/recall': 0.10483870967741936, 'slab/precision': 0.6842105263157895, 'slab/f1': 0.18181818181818185, 'none/recall': 0.9222222222222223, 'none/precision': 0.17148760330578514, 'none/f1': 0.289198606271777, 'recall_um': 0.29897302518270263, 'precision_um': 0.5013229063891336, 'f1_um': 0.19082972352938876, 'accuracy': 0.19807427785419532, 'binary/accuracy': 0.218707015130674, 'binary/recall': 0.12140575079872204, 'binary/precision': 0.8085106382978723, 'binary/f1': 0.2111111111111111}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.15584    0.061224     0.15726]
+precision:  [    0.64286     0.34615     0.68421]
+f1 score:  [    0.25087     0.10405     0.25574]
+unweighted 3Class scores:  {'withoutNone/recall': 0.12477557005206774, 'withoutNone/precision': 0.5577405051089261, 'withoutNone/f1Score': 0.20355167594399068}
+matrix with none:
+ [[         35           1          10           1           5]
+ [          2           9           1           2           4]
+ [          1           6          36           5           5]
+ [        101          69         160          81           0]
+ [         92          62          41           0           0]]
+binary confusion matrix:
+ [[        101          22]
+ [        525          81]]
+{'glide/recall': 0.15151515151515152, 'glide/precision': 0.6730769230769231, 'glide/f1': 0.2473498233215548, 'loose/recall': 0.061224489795918366, 'loose/precision': 0.5, 'loose/f1': 0.1090909090909091, 'slab/recall': 0.14516129032258066, 'slab/precision': 0.6792452830188679, 'slab/f1': 0.239202657807309, 'none/recall': 0.9101123595505618, 'none/precision': 0.19708029197080293, 'none/f1': 0.324, 'recall_um': 0.3170033227960531, 'precision_um': 0.5123506245166485, 'f1_um': 0.22991084755494323, 'accuracy': 0.22085048010973937, 'binary/accuracy': 0.2496570644718793, 'binary/recall': 0.16134185303514376, 'binary/precision': 0.8211382113821138, 'binary/f1': 0.2696929238985314}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.20346     0.22449     0.23387]
+precision:  [    0.72308        0.44     0.84058]
+f1 score:  [    0.31757      0.2973     0.36593]
+unweighted 3Class scores:  {'withoutNone/recall': 0.22060798904116877, 'withoutNone/precision': 0.6678855444072834, 'withoutNone/f1Score': 0.32693182141131666}
+matrix with none:
+ [[         46           0           3           3           9]
+ [          3          33           5           2          13]
+ [          2           1          55           2           7]
+ [         96          47         148          83           0]
+ [         84          66          37           0           0]]
+binary confusion matrix:
+ [[        148          36]
+ [        478          83]]
+{'glide/recall': 0.19913419913419914, 'glide/precision': 0.7540983606557377, 'glide/f1': 0.3150684931506849, 'loose/recall': 0.22448979591836735, 'loose/precision': 0.5892857142857143, 'loose/f1': 0.3251231527093596, 'slab/recall': 0.2217741935483871, 'slab/precision': 0.8208955223880597, 'slab/f1': 0.3492063492063492, 'none/recall': 0.9222222222222223, 'none/precision': 0.22192513368983957, 'none/f1': 0.3577586206896552, 'recall_um': 0.39190510270579393, 'precision_um': 0.5965511827548378, 'f1_um': 0.3367891539390122, 'accuracy': 0.2912751677852349, 'binary/accuracy': 0.3100671140939597, 'binary/recall': 0.2364217252396166, 'binary/precision': 0.8043478260869565, 'binary/f1': 0.3654320987654321}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.18182    0.054422     0.25403]
+precision:  [    0.53846     0.57143     0.66316]
+f1 score:  [    0.27184    0.099379     0.36735]
+unweighted 3Class scores:  {'withoutNone/recall': 0.1634240695300603, 'withoutNone/precision': 0.5910160015423173, 'withoutNone/f1Score': 0.2461901603190875}
+matrix with none:
+ [[         41           1          12           7          12]
+ [          0           8           0           0           5]
+ [          3           7          62           7           3]
+ [        109          77         117          79           0]
+ [         78          54          57           0           0]]
+binary confusion matrix:
+ [[        134          34]
+ [        492          79]]
+{'glide/recall': 0.1774891774891775, 'glide/precision': 0.5616438356164384, 'glide/f1': 0.2697368421052632, 'loose/recall': 0.05442176870748299, 'loose/precision': 0.6153846153846154, 'loose/f1': 0.1, 'slab/recall': 0.25, 'slab/precision': 0.7560975609756098, 'slab/f1': 0.37575757575757573, 'none/recall': 0.8494623655913979, 'none/precision': 0.20680628272251309, 'none/f1': 0.3326315789473684, 'recall_um': 0.3328433279470146, 'precision_um': 0.5349830736747941, 'f1_um': 0.2695314992025518, 'accuracy': 0.2571041948579161, 'binary/accuracy': 0.2882273342354533, 'binary/recall': 0.21405750798722045, 'binary/precision': 0.7976190476190477, 'binary/f1': 0.33753148614609574}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.18615     0.12245     0.30242]
+precision:  [    0.66154         0.6     0.72115]
+f1 score:  [    0.29054     0.20339     0.42614]
+unweighted 3Class scores:  {'withoutNone/recall': 0.20367184019257753, 'withoutNone/precision': 0.6608974358974359, 'withoutNone/f1Score': 0.3066889115617929}
+matrix with none:
+ [[         43           0           7           7           6]
+ [          5          16           1           1           6]
+ [          4           5          73           7          10]
+ [         99          66         116          76           0]
+ [         80          60          51           0           0]]
+binary confusion matrix:
+ [[        154          37]
+ [        472          76]]
+{'glide/recall': 0.18614718614718614, 'glide/precision': 0.6825396825396826, 'glide/f1': 0.2925170068027211, 'loose/recall': 0.10884353741496598, 'loose/precision': 0.5517241379310345, 'loose/f1': 0.1818181818181818, 'slab/recall': 0.29435483870967744, 'slab/precision': 0.7373737373737373, 'slab/f1': 0.42074927953890495, 'none/recall': 0.8351648351648352, 'none/precision': 0.21288515406162464, 'none/f1': 0.33928571428571425, 'recall_um': 0.35612759935916616, 'precision_um': 0.5461306779765198, 'f1_um': 0.3085925456113805, 'accuracy': 0.2814614343707713, 'binary/accuracy': 0.3112313937753721, 'binary/recall': 0.24600638977635783, 'binary/precision': 0.806282722513089, 'binary/f1': 0.37698898408812725}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.22944     0.11565     0.17742]
+precision:  [    0.79104     0.54839     0.69841]
+f1 score:  [     0.3557     0.19101     0.28296]
+unweighted 3Class scores:  {'withoutNone/recall': 0.1741676142597802, 'withoutNone/precision': 0.6792815237687648, 'withoutNone/f1Score': 0.2765580444328488}
+matrix with none:
+ [[         52           0           3           3           6]
+ [          3          17           1           2           5]
+ [          4           3          44           3           3]
+ [         99          70         169          83           0]
+ [         73          57          31           0           0]]
+binary confusion matrix:
+ [[        127          22]
+ [        499          83]]
+{'glide/recall': 0.22510822510822512, 'glide/precision': 0.8125, 'glide/f1': 0.3525423728813559, 'loose/recall': 0.11564625850340136, 'loose/precision': 0.6071428571428571, 'loose/f1': 0.19428571428571428, 'slab/recall': 0.1774193548387097, 'slab/precision': 0.7719298245614035, 'slab/f1': 0.2885245901639344, 'none/recall': 0.9120879120879121, 'none/precision': 0.19714964370546317, 'none/f1': 0.32421875, 'recall_um': 0.35756543763456206, 'precision_um': 0.597180581352431, 'f1_um': 0.2898928568327511, 'accuracy': 0.26812585499316005, 'binary/accuracy': 0.2872777017783858, 'binary/recall': 0.20287539936102236, 'binary/precision': 0.8523489932885906, 'binary/f1': 0.327741935483871}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [     0.2684     0.23129     0.29032]
+precision:  [    0.61386     0.45946        0.75]
+f1 score:  [    0.37349     0.30769      0.4186]
+unweighted 3Class scores:  {'withoutNone/recall': 0.2633377886834108, 'withoutNone/precision': 0.6077736151993578, 'withoutNone/f1Score': 0.3665969782529043}
+matrix with none:
+ [[         61           0           4           4          26]
+ [          7          33           9           2          14]
+ [          2           4          70           6           5]
+ [         71          43         103          79           0]
+ [         90          67          62           0           0]]
+binary confusion matrix:
+ [[        190          57]
+ [        436          79]]
+{'glide/recall': 0.26406926406926406, 'glide/precision': 0.6421052631578947, 'glide/f1': 0.37423312883435583, 'loose/recall': 0.22448979591836735, 'loose/precision': 0.5076923076923077, 'loose/f1': 0.3113207547169811, 'slab/recall': 0.28225806451612906, 'slab/precision': 0.8045977011494253, 'slab/f1': 0.417910447761194, 'none/recall': 0.8681318681318682, 'none/precision': 0.2668918918918919, 'none/f1': 0.4082687338501292, 'recall_um': 0.40973724815890716, 'precision_um': 0.5553217909728798, 'f1_um': 0.37793326629066504, 'accuracy': 0.3188976377952756, 'binary/accuracy': 0.3530183727034121, 'binary/recall': 0.3035143769968051, 'binary/precision': 0.7692307692307693, 'binary/f1': 0.4352806414662085}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.25108      0.2381     0.42339]
+precision:  [    0.66667     0.47297     0.67308]
+f1 score:  [    0.36478     0.31674      0.5198]
+unweighted 3Class scores:  {'withoutNone/recall': 0.30418819531722757, 'withoutNone/precision': 0.6042388542388543, 'withoutNone/f1Score': 0.4004413119532733}
+matrix with none:
+ [[         57           1           6           3          15]
+ [          8          34           2           2          13]
+ [          5           4         104          17          14]
+ [         35          35          59          71           0]
+ [        126          73          77           0           0]]
+binary confusion matrix:
+ [[        221          64]
+ [        405          71]]
+{'glide/recall': 0.24675324675324675, 'glide/precision': 0.6951219512195121, 'glide/f1': 0.3642172523961661, 'loose/recall': 0.23129251700680273, 'loose/precision': 0.576271186440678, 'loose/f1': 0.3300970873786408, 'slab/recall': 0.41935483870967744, 'slab/precision': 0.7222222222222222, 'slab/f1': 0.5306122448979592, 'none/recall': 0.7634408602150538, 'none/precision': 0.355, 'none/f1': 0.48464163822525597, 'recall_um': 0.4152103656711952, 'precision_um': 0.5871538399706031, 'f1_um': 0.42739205572450556, 'accuracy': 0.3495400788436268, 'binary/accuracy': 0.38370565045992117, 'binary/recall': 0.35303514376996803, 'binary/precision': 0.775438596491228, 'binary/f1': 0.48518111964873767}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.24242     0.07483     0.31452]
+precision:  [    0.62222     0.52381     0.67826]
+f1 score:  [    0.34891     0.13095     0.42975]
+unweighted 3Class scores:  {'withoutNone/recall': 0.21059010114309654, 'withoutNone/precision': 0.6080975385323212, 'withoutNone/f1Score': 0.3032047014629852}
+matrix with none:
+ [[         54           0           4           5          21]
+ [          4          10           0           0           2]
+ [          6           9          77          10           6]
+ [         85          86         109          75           0]
+ [         82          42          58           0           0]]
+binary confusion matrix:
+ [[        164          44]
+ [        462          75]]
+{'glide/recall': 0.23376623376623376, 'glide/precision': 0.6428571428571429, 'glide/f1': 0.34285714285714286, 'loose/recall': 0.06802721088435375, 'loose/precision': 0.625, 'loose/f1': 0.12269938650306751, 'slab/recall': 0.31048387096774194, 'slab/precision': 0.7129629629629629, 'slab/f1': 0.4325842696629214, 'none/recall': 0.8333333333333334, 'none/precision': 0.2112676056338028, 'none/f1': 0.33707865168539325, 'recall_um': 0.36140266223791573, 'precision_um': 0.5480219278634771, 'f1_um': 0.30880486267713125, 'accuracy': 0.28993288590604027, 'binary/accuracy': 0.3208053691275168, 'binary/recall': 0.26198083067092653, 'binary/precision': 0.7884615384615384, 'binary/f1': 0.3932853717026379}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.22078     0.19728     0.36694]
+precision:  [    0.68919         0.5     0.65468]
+f1 score:  [    0.33443     0.28293     0.47028]
+unweighted 3Class scores:  {'withoutNone/recall': 0.26166453873827145, 'withoutNone/precision': 0.6146218160606649, 'withoutNone/f1Score': 0.3625457655008624}
+matrix with none:
+ [[         49           0           5           1          13]
+ [          7          26           1           2          14]
+ [          8          12          89          10          12]
+ [         71          44          94          78           0]
+ [         96          65          59           0           0]]
+binary confusion matrix:
+ [[        197          52]
+ [        429          78]]
+{'glide/recall': 0.21212121212121213, 'glide/precision': 0.7205882352941176, 'glide/f1': 0.3277591973244147, 'loose/recall': 0.17687074829931973, 'loose/precision': 0.52, 'loose/f1': 0.2639593908629442, 'slab/recall': 0.3588709677419355, 'slab/precision': 0.6793893129770993, 'slab/f1': 0.4696569920844327, 'none/recall': 0.8571428571428571, 'none/precision': 0.27177700348432055, 'none/f1': 0.4126984126984126, 'recall_um': 0.40125144632633114, 'precision_um': 0.5479386379388844, 'f1_um': 0.368518498242551, 'accuracy': 0.3201058201058201, 'binary/accuracy': 0.3637566137566138, 'binary/recall': 0.3146964856230032, 'binary/precision': 0.7911646586345381, 'binary/f1': 0.4502857142857143}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.23377     0.12245      0.2621]
+precision:  [    0.66667     0.64286     0.59633]
+f1 score:  [    0.34615     0.20571     0.36415]
+unweighted 3Class scores:  {'withoutNone/recall': 0.20610399585053962, 'withoutNone/precision': 0.6352846949177224, 'withoutNone/f1Score': 0.3053379300438123}
+matrix with none:
+ [[         51           2           8           2          14]
+ [          3          16           0           0           6]
+ [          7           8          64           5          11]
+ [         70          54         131          83           0]
+ [        100          67          45           0           0]]
+binary confusion matrix:
+ [[        159          38]
+ [        467          83]]
+{'glide/recall': 0.22077922077922077, 'glide/precision': 0.6623376623376623, 'glide/f1': 0.33116883116883117, 'loose/recall': 0.10884353741496598, 'loose/precision': 0.64, 'loose/f1': 0.18604651162790697, 'slab/recall': 0.25806451612903225, 'slab/precision': 0.6736842105263158, 'slab/f1': 0.37317784256559766, 'none/recall': 0.9222222222222223, 'none/precision': 0.2455621301775148, 'none/f1': 0.38785046728971967, 'recall_um': 0.3774773741363603, 'precision_um': 0.5553960007603732, 'f1_um': 0.3195609131630138, 'accuracy': 0.28647925033467203, 'binary/accuracy': 0.32396251673360105, 'binary/recall': 0.2539936102236422, 'binary/precision': 0.8071065989847716, 'binary/f1': 0.3863912515188335}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [     0.2987     0.12925     0.44758]
+precision:  [    0.63889     0.63333     0.68098]
+f1 score:  [    0.40708     0.21469     0.54015]
+unweighted 3Class scores:  {'withoutNone/recall': 0.29184454818095373, 'withoutNone/precision': 0.6510679391047489, 'withoutNone/f1Score': 0.38730496565196065}
+matrix with none:
+ [[         68           4           7           6          18]
+ [          1          19           0           1           7]
+ [          5           9         109          17          11]
+ [         34          39          55          69           0]
+ [        123          76          77           0           0]]
+binary confusion matrix:
+ [[        222          60]
+ [        404          69]]
+{'glide/recall': 0.2943722943722944, 'glide/precision': 0.6601941747572816, 'glide/f1': 0.40718562874251496, 'loose/recall': 0.1292517006802721, 'loose/precision': 0.6785714285714286, 'loose/f1': 0.21714285714285714, 'slab/recall': 0.43951612903225806, 'slab/precision': 0.7218543046357616, 'slab/f1': 0.5463659147869674, 'none/recall': 0.7419354838709677, 'none/precision': 0.350253807106599, 'none/f1': 0.4758620689655172, 'recall_um': 0.4012689019889481, 'precision_um': 0.6027184287677676, 'f1_um': 0.41163911740946413, 'accuracy': 0.3509933774834437, 'binary/accuracy': 0.38543046357615895, 'binary/recall': 0.3546325878594249, 'binary/precision': 0.7872340425531915, 'binary/f1': 0.4889867841409692}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.25974     0.16327     0.41935]
+precision:  [    0.81081     0.66667     0.67974]
+f1 score:  [    0.39344      0.2623      0.5187]
+unweighted 3Class scores:  {'withoutNone/recall': 0.28078680152412866, 'withoutNone/precision': 0.7190720131896603, 'withoutNone/f1Score': 0.39148031560443153}
+matrix with none:
+ [[         58           1           3           1           9]
+ [          2          23           1           1           6]
+ [          8          10         102          10          12]
+ [         63          34          79          78           0]
+ [        100          79          63           0           0]]
+binary confusion matrix:
+ [[        208          39]
+ [        418          78]]
+{'glide/recall': 0.2510822510822511, 'glide/precision': 0.8055555555555556, 'glide/f1': 0.38283828382838286, 'loose/recall': 0.1564625850340136, 'loose/precision': 0.696969696969697, 'loose/f1': 0.2555555555555556, 'slab/recall': 0.4112903225806452, 'slab/precision': 0.7183098591549296, 'slab/f1': 0.5230769230769231, 'none/recall': 0.8666666666666667, 'none/precision': 0.30708661417322836, 'none/f1': 0.45348837209302334, 'recall_um': 0.42137545634089413, 'precision_um': 0.6319804314633526, 'f1_um': 0.40373978363847124, 'accuracy': 0.351278600269179, 'binary/accuracy': 0.38492597577388965, 'binary/recall': 0.33226837060702874, 'binary/precision': 0.8421052631578947, 'binary/f1': 0.47651775486827036}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.29004     0.14286     0.38306]
+precision:  [    0.68367     0.58333     0.59748]
+f1 score:  [    0.40729     0.22951     0.46683]
+unweighted 3Class scores:  {'withoutNone/recall': 0.27198831634315507, 'withoutNone/precision': 0.6214970264835494, 'withoutNone/f1Score': 0.36787783212617525}
+matrix with none:
+ [[         67           2           8           3          11]
+ [          1          18           3           1           9]
+ [          4          11          94          19          13]
+ [         35          45          68          70           0]
+ [        124          71          75           0           0]]
+binary confusion matrix:
+ [[        208          56]
+ [        418          70]]
+{'glide/recall': 0.29004329004329005, 'glide/precision': 0.7362637362637363, 'glide/f1': 0.4161490683229813, 'loose/recall': 0.12244897959183673, 'loose/precision': 0.5625, 'loose/f1': 0.20111731843575417, 'slab/recall': 0.3790322580645161, 'slab/precision': 0.6666666666666666, 'slab/f1': 0.4832904884318766, 'none/recall': 0.7526881720430108, 'none/precision': 0.3211009174311927, 'none/f1': 0.45016077170418006, 'recall_um': 0.3860531749356634, 'precision_um': 0.5716328300903989, 'f1_um': 0.387679411723698, 'accuracy': 0.33111702127659576, 'binary/accuracy': 0.3696808510638298, 'binary/recall': 0.33226837060702874, 'binary/precision': 0.7878787878787878, 'binary/f1': 0.4674157303370786}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.28139     0.10884     0.41935]
+precision:  [    0.63107     0.69565      0.5445]
+f1 score:  [    0.38922     0.18824      0.4738]
+unweighted 3Class scores:  {'withoutNone/recall': 0.26986121916997496, 'withoutNone/precision': 0.6237409176263798, 'withoutNone/f1Score': 0.3504203170772217}
+matrix with none:
+ [[         64           1           4           3          27]
+ [          1          16           0           0           2]
+ [          7           9         103          28          20]
+ [         26          48          60          64           0]
+ [        133          73          81           0           0]]
+binary confusion matrix:
+ [[        205          80]
+ [        421          64]]
+{'glide/recall': 0.27705627705627706, 'glide/precision': 0.6464646464646465, 'glide/f1': 0.3878787878787879, 'loose/recall': 0.10884353741496598, 'loose/precision': 0.8421052631578947, 'loose/f1': 0.19277108433734938, 'slab/recall': 0.4153225806451613, 'slab/precision': 0.6167664670658682, 'slab/f1': 0.4963855421686747, 'none/recall': 0.6736842105263158, 'none/precision': 0.32323232323232326, 'none/f1': 0.4368600682593857, 'recall_um': 0.36872665141068006, 'precision_um': 0.6071421749801832, 'f1_um': 0.3784738706610494, 'accuracy': 0.3207792207792208, 'binary/accuracy': 0.34935064935064936, 'binary/recall': 0.3274760383386581, 'binary/precision': 0.7192982456140351, 'binary/f1': 0.4500548847420417}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [     0.2987     0.20408     0.45161]
+precision:  [    0.56098     0.53571     0.67879]
+f1 score:  [    0.38983     0.29557     0.54237]
+unweighted 3Class scores:  {'withoutNone/recall': 0.31813194486005547, 'withoutNone/precision': 0.591825924752754, 'withoutNone/f1Score': 0.4092566307645209}
+matrix with none:
+ [[         69           1           4           1          38]
+ [          5          27           4           4          13]
+ [          5           7         108          15          18]
+ [         29          50          63          75           0]
+ [        123          62          69           0           0]]
+binary confusion matrix:
+ [[        230          89]
+ [        396          75]]
+{'glide/recall': 0.2987012987012987, 'glide/precision': 0.6106194690265486, 'glide/f1': 0.4011627906976744, 'loose/recall': 0.1836734693877551, 'loose/precision': 0.5094339622641509, 'loose/f1': 0.27, 'slab/recall': 0.43548387096774194, 'slab/precision': 0.7058823529411765, 'slab/f1': 0.5386533665835412, 'none/recall': 0.7894736842105263, 'none/precision': 0.3456221198156682, 'none/f1': 0.48076923076923084, 'recall_um': 0.4268330808168305, 'precision_um': 0.5428894760118861, 'f1_um': 0.4226463470126116, 'accuracy': 0.3531645569620253, 'binary/accuracy': 0.3860759493670886, 'binary/recall': 0.36741214057507987, 'binary/precision': 0.7210031347962382, 'binary/f1': 0.4867724867724868}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.22078     0.18367     0.31452]
+precision:  [    0.80952     0.52941     0.67826]
+f1 score:  [    0.34694     0.27273     0.42975]
+unweighted 3Class scores:  {'withoutNone/recall': 0.23965627306641132, 'withoutNone/precision': 0.6723988145983032, 'withoutNone/f1Score': 0.34980603811772637}
+matrix with none:
+ [[         50           0           3           1           6]
+ [          6          26           4           0          13]
+ [          7          13          75           7           8]
+ [         81          50         119          81           0]
+ [         87          58          47           0           0]]
+binary confusion matrix:
+ [[        184          35]
+ [        442          81]]
+{'glide/recall': 0.21645021645021645, 'glide/precision': 0.8333333333333334, 'glide/f1': 0.34364261168384874, 'loose/recall': 0.17687074829931973, 'loose/precision': 0.5306122448979592, 'loose/f1': 0.2653061224489796, 'slab/recall': 0.3024193548387097, 'slab/precision': 0.6818181818181818, 'slab/f1': 0.41899441340782123, 'none/recall': 0.9101123595505618, 'none/precision': 0.24471299093655588, 'none/f1': 0.3857142857142857, 'recall_um': 0.4014631697847019, 'precision_um': 0.5726191877465076, 'f1_um': 0.3534143583137338, 'accuracy': 0.31266846361185985, 'binary/accuracy': 0.35714285714285715, 'binary/recall': 0.2939297124600639, 'binary/precision': 0.8401826484018264, 'binary/f1': 0.43550295857988164}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.33333     0.21769     0.39919]
+precision:  [      0.616     0.59259     0.77953]
+f1 score:  [    0.43258     0.31841       0.528]
+unweighted 3Class scores:  {'withoutNone/recall': 0.31673798551678733, 'withoutNone/precision': 0.6627067172159036, 'withoutNone/f1Score': 0.4263307432873087}
+matrix with none:
+ [[         77           2          11           3          25]
+ [          7          30           3           1           7]
+ [          1           6          97           8          12]
+ [         56          26          69          78           0]
+ [         90          83          68           0           0]]
+binary confusion matrix:
+ [[        234          56]
+ [        392          78]]
+{'glide/recall': 0.3333333333333333, 'glide/precision': 0.652542372881356, 'glide/f1': 0.44126074498567336, 'loose/recall': 0.20408163265306123, 'loose/precision': 0.625, 'loose/f1': 0.3076923076923077, 'slab/recall': 0.3911290322580645, 'slab/precision': 0.782258064516129, 'slab/f1': 0.521505376344086, 'none/recall': 0.8666666666666667, 'none/precision': 0.3406113537117904, 'none/f1': 0.48902821316614414, 'recall_um': 0.4488026662277814, 'precision_um': 0.6001029477773189, 'f1_um': 0.4398716605470528, 'accuracy': 0.37105263157894736, 'binary/accuracy': 0.4105263157894737, 'binary/recall': 0.3738019169329074, 'binary/precision': 0.8068965517241379, 'binary/f1': 0.5109170305676857}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.30303     0.14966     0.42742]
+precision:  [    0.68627     0.47826     0.65031]
+f1 score:  [    0.42042     0.22798     0.51582]
+unweighted 3Class scores:  {'withoutNone/recall': 0.29336984060486365, 'withoutNone/precision': 0.6049473759451323, 'withoutNone/f1Score': 0.3880715933966567}
+matrix with none:
+ [[         68           1           5           2          23]
+ [          5          20           1           1          11]
+ [          4           9         104          15          16]
+ [         58          36          69          76           0]
+ [         96          81          69           0           0]]
+binary confusion matrix:
+ [[        217          68]
+ [        409          76]]
+{'glide/recall': 0.2943722943722944, 'glide/precision': 0.6868686868686869, 'glide/f1': 0.4121212121212121, 'loose/recall': 0.1360544217687075, 'loose/precision': 0.5263157894736842, 'loose/f1': 0.21621621621621623, 'slab/recall': 0.41935483870967744, 'slab/precision': 0.7027027027027027, 'slab/f1': 0.5252525252525253, 'none/recall': 0.8085106382978723, 'none/precision': 0.3179916317991632, 'none/f1': 0.4564564564564564, 'recall_um': 0.4145730482871379, 'precision_um': 0.5584697027110592, 'f1_um': 0.4025116025116025, 'accuracy': 0.34805194805194806, 'binary/accuracy': 0.38051948051948054, 'binary/recall': 0.3466453674121406, 'binary/precision': 0.7614035087719299, 'binary/f1': 0.4763995609220637}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.30736    0.088435     0.42742]
+precision:  [    0.62832     0.54167     0.72109]
+f1 score:  [    0.41279     0.15205     0.53671]
+unweighted 3Class scores:  {'withoutNone/recall': 0.274404678782559, 'withoutNone/precision': 0.6303578953705377, 'withoutNone/f1Score': 0.36718211401988105}
+matrix with none:
+ [[         70           1           5           2          29]
+ [          6          12           0           0           4]
+ [          5           6         104          11          13]
+ [         50          68          72          78           0]
+ [        100          60          67           0           0]]
+binary confusion matrix:
+ [[        209          59]
+ [        417          78]]
+{'glide/recall': 0.30303030303030304, 'glide/precision': 0.6542056074766355, 'glide/f1': 0.4142011834319526, 'loose/recall': 0.08163265306122448, 'loose/precision': 0.5454545454545454, 'loose/f1': 0.1420118343195266, 'slab/recall': 0.41935483870967744, 'slab/precision': 0.7482014388489209, 'slab/f1': 0.537467700258398, 'none/recall': 0.8571428571428571, 'none/precision': 0.291044776119403, 'none/f1': 0.43454038997214484, 'recall_um': 0.4152901629860155, 'precision_um': 0.5597265919748762, 'f1_um': 0.38205527699550557, 'accuracy': 0.34600262123197906, 'binary/accuracy': 0.3761467889908257, 'binary/recall': 0.33386581469648563, 'binary/precision': 0.7798507462686567, 'binary/f1': 0.46756152125279643}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.37662     0.13605     0.43145]
+precision:  [    0.52096     0.71429     0.70395]
+f1 score:  [    0.43719     0.22857       0.535]
+unweighted 3Class scores:  {'withoutNone/recall': 0.3147098037651033, 'withoutNone/precision': 0.6463970555130341, 'withoutNone/f1Score': 0.4002524527398899}
+matrix with none:
+ [[         87           2          10           9          48]
+ [          2          17           0           0           7]
+ [          4          15         103           7          13]
+ [         11          47          64          75           0]
+ [        127          66          71           0           0]]
+binary confusion matrix:
+ [[        240          84]
+ [        386          75]]
+{'glide/recall': 0.37662337662337664, 'glide/precision': 0.5576923076923077, 'glide/f1': 0.4496124031007752, 'loose/recall': 0.11564625850340136, 'loose/precision': 0.6538461538461539, 'loose/f1': 0.19653179190751446, 'slab/recall': 0.4153225806451613, 'slab/precision': 0.7253521126760564, 'slab/f1': 0.5282051282051282, 'none/recall': 0.8241758241758241, 'none/precision': 0.38071065989847713, 'none/f1': 0.5208333333333334, 'recall_um': 0.4329420099869409, 'precision_um': 0.5794003085282489, 'f1_um': 0.4237956641366878, 'accuracy': 0.3592356687898089, 'binary/accuracy': 0.4012738853503185, 'binary/recall': 0.38338658146964855, 'binary/precision': 0.7407407407407407, 'binary/f1': 0.5052631578947369}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.30736     0.15646     0.51613]
+precision:  [    0.64545     0.41818     0.60952]
+f1 score:  [    0.41642     0.22772     0.55895]
+unweighted 3Class scores:  {'withoutNone/recall': 0.3266503082171285, 'withoutNone/precision': 0.5577200577200577, 'withoutNone/f1Score': 0.4010323415775863}
+matrix with none:
+ [[         70           1           2           5          27]
+ [          5          22           2           2          12]
+ [          8          13         128          14          30]
+ [         42          43          35          69           0]
+ [        106          68          81           0           0]]
+binary confusion matrix:
+ [[        251          90]
+ [        375          69]]
+{'glide/recall': 0.30303030303030304, 'glide/precision': 0.6666666666666666, 'glide/f1': 0.41666666666666663, 'loose/recall': 0.14965986394557823, 'loose/precision': 0.5116279069767442, 'loose/f1': 0.23157894736842108, 'slab/recall': 0.5161290322580645, 'slab/precision': 0.6632124352331606, 'slab/f1': 0.5804988662131519, 'none/recall': 0.7666666666666667, 'none/precision': 0.36507936507936506, 'none/f1': 0.49462365591397855, 'recall_um': 0.4338714664751531, 'precision_um': 0.5516465934889841, 'f1_um': 0.43084203404055454, 'accuracy': 0.3681528662420382, 'binary/accuracy': 0.40764331210191085, 'binary/recall': 0.4009584664536741, 'binary/precision': 0.7360703812316716, 'binary/f1': 0.5191313340227508}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.29437     0.19728     0.53226]
+precision:  [    0.63551     0.70732     0.60274]
+f1 score:  [    0.40237     0.30851     0.56531]
+unweighted 3Class scores:  {'withoutNone/recall': 0.3413030901510164, 'withoutNone/precision': 0.6485236059632392, 'withoutNone/f1Score': 0.4253959982361837}
+matrix with none:
+ [[         67           1           2           1          29]
+ [          3          26           1           0           9]
+ [          9          15         132          19          32]
+ [         45          38          44          70           0]
+ [        107          67          69           0           0]]
+binary confusion matrix:
+ [[        256          90]
+ [        370          70]]
+{'glide/recall': 0.29004329004329005, 'glide/precision': 0.67, 'glide/f1': 0.4048338368580061, 'loose/recall': 0.17687074829931973, 'loose/precision': 0.6666666666666666, 'loose/f1': 0.2795698924731183, 'slab/recall': 0.532258064516129, 'slab/precision': 0.6376811594202898, 'slab/f1': 0.5802197802197802, 'none/recall': 0.7777777777777778, 'none/precision': 0.3553299492385787, 'none/f1': 0.4878048780487805, 'recall_um': 0.4442374701591292, 'precision_um': 0.5824194438313838, 'f1_um': 0.4381070968999213, 'accuracy': 0.3753180661577608, 'binary/accuracy': 0.41475826972010177, 'binary/recall': 0.40894568690095845, 'binary/precision': 0.7398843930635838, 'binary/f1': 0.5267489711934156}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.27273     0.16327     0.45565]
+precision:  [    0.65625     0.45283     0.65318]
+f1 score:  [    0.38532        0.24     0.53682]
+unweighted 3Class scores:  {'withoutNone/recall': 0.2972125800466814, 'withoutNone/precision': 0.5874197931435634, 'withoutNone/f1Score': 0.38737940101839946}
+matrix with none:
+ [[         61           0           8           4          17]
+ [         10          22           4           0          15]
+ [          6          12         111          13          19]
+ [         44          38          47          76           0]
+ [        110          75          78           0           0]]
+binary confusion matrix:
+ [[        234          68]
+ [        392          76]]
+{'glide/recall': 0.26406926406926406, 'glide/precision': 0.6777777777777778, 'glide/f1': 0.38006230529595014, 'loose/recall': 0.14965986394557823, 'loose/precision': 0.43137254901960786, 'loose/f1': 0.22222222222222227, 'slab/recall': 0.4475806451612903, 'slab/precision': 0.6894409937888198, 'slab/f1': 0.5427872860635696, 'none/recall': 0.8172043010752689, 'none/precision': 0.37073170731707317, 'none/f1': 0.5100671140939598, 'recall_um': 0.41962851856285033, 'precision_um': 0.5423307569758197, 'f1_um': 0.4137847319189255, 'accuracy': 0.35064935064935066, 'binary/accuracy': 0.4025974025974026, 'binary/recall': 0.3738019169329074, 'binary/precision': 0.7748344370860927, 'binary/f1': 0.5043103448275862}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.32468     0.21088     0.47177]
+precision:  [    0.58594     0.46269     0.58209]
+f1 score:  [    0.41783     0.28972     0.52116]
+unweighted 3Class scores:  {'withoutNone/recall': 0.33577795732173615, 'withoutNone/precision': 0.5435712064676617, 'withoutNone/f1Score': 0.4095683511314367}
+matrix with none:
+ [[         73           0           6           2          38]
+ [          6          29           4           0          23]
+ [          5           9         114          17          36]
+ [         39          37          46          73           0]
+ [        108          72          78           0           0]]
+binary confusion matrix:
+ [[        246         116]
+ [        380          73]]
+{'glide/recall': 0.31601731601731603, 'glide/precision': 0.6134453781512605, 'glide/f1': 0.41714285714285715, 'loose/recall': 0.19727891156462585, 'loose/precision': 0.46774193548387094, 'loose/f1': 0.277511961722488, 'slab/recall': 0.4596774193548387, 'slab/precision': 0.6298342541436464, 'slab/f1': 0.5314685314685315, 'none/recall': 0.7934782608695652, 'none/precision': 0.37435897435897436, 'none/f1': 0.5087108013937283, 'recall_um': 0.44161297695158647, 'precision_um': 0.5213451355344381, 'f1_um': 0.43370853793190123, 'accuracy': 0.35460122699386504, 'binary/accuracy': 0.3914110429447853, 'binary/recall': 0.3929712460063898, 'binary/precision': 0.6795580110497238, 'binary/f1': 0.49797570850202433}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.28139     0.16327     0.39113]
+precision:  [    0.63725     0.46154     0.71852]
+f1 score:  [    0.39039     0.24121     0.50653]
+unweighted 3Class scores:  {'withoutNone/recall': 0.27859320658859826, 'withoutNone/precision': 0.6057706273392548, 'withoutNone/f1Score': 0.3793746118949157}
+matrix with none:
+ [[         65           0           2           0          28]
+ [          7          22           4           3          13]
+ [          4           9          97           6           9]
+ [         70          53          80          82           0]
+ [         85          63          65           0           0]]
+binary confusion matrix:
+ [[        210          59]
+ [        416          82]]
+{'glide/recall': 0.2813852813852814, 'glide/precision': 0.6842105263157895, 'glide/f1': 0.39877300613496935, 'loose/recall': 0.14965986394557823, 'loose/precision': 0.4489795918367347, 'loose/f1': 0.22448979591836737, 'slab/recall': 0.3911290322580645, 'slab/precision': 0.776, 'slab/f1': 0.5201072386058981, 'none/recall': 0.9010989010989011, 'none/precision': 0.28771929824561404, 'none/f1': 0.4361702127659575, 'recall_um': 0.43081826967195636, 'precision_um': 0.5492273540995345, 'f1_um': 0.3948850633562981, 'accuracy': 0.3468057366362451, 'binary/accuracy': 0.38070404172099087, 'binary/recall': 0.3354632587859425, 'binary/precision': 0.7806691449814126, 'binary/f1': 0.4692737430167599}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.32035     0.13605     0.45968]
+precision:  [    0.61157     0.46512     0.67857]
+f1 score:  [    0.42045     0.21053     0.54808]
+unweighted 3Class scores:  {'withoutNone/recall': 0.3053593871566222, 'withoutNone/precision': 0.5850859851916934, 'withoutNone/f1Score': 0.39301926144031407}
+matrix with none:
+ [[         73           1           3           7          27]
+ [          4          19           9           2           9]
+ [          5          10         111           9          21]
+ [         54          48          52          75           0]
+ [         95          69          73           0           0]]
+binary confusion matrix:
+ [[        235          75]
+ [        391          75]]
+{'glide/recall': 0.31601731601731603, 'glide/precision': 0.6576576576576577, 'glide/f1': 0.4269005847953217, 'loose/recall': 0.1292517006802721, 'loose/precision': 0.4418604651162791, 'loose/f1': 0.2, 'slab/recall': 0.4475806451612903, 'slab/precision': 0.7115384615384616, 'slab/f1': 0.5495049504950495, 'none/recall': 0.8064516129032258, 'none/precision': 0.32751091703056767, 'none/f1': 0.4658385093167701, 'recall_um': 0.42482531869052603, 'precision_um': 0.5346418753357415, 'f1_um': 0.41056101115178534, 'accuracy': 0.3582474226804124, 'binary/accuracy': 0.39948453608247425, 'binary/recall': 0.3753993610223642, 'binary/precision': 0.7580645161290323, 'binary/f1': 0.5021367521367521}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.30736     0.15646     0.53629]
+precision:  [    0.55469     0.42593     0.59641]
+f1 score:  [    0.39554     0.22886     0.56476]
+unweighted 3Class scores:  {'withoutNone/recall': 0.33337073832465536, 'withoutNone/precision': 0.5256753273265792, 'withoutNone/f1Score': 0.3963849118405629}
+matrix with none:
+ [[         71           1           5           6          38]
+ [          7          21           2           0          19]
+ [          5          18         131          16          40]
+ [         53          16          34          69           0]
+ [         95          91          76           0           0]]
+binary confusion matrix:
+ [[        261         119]
+ [        365          69]]
+{'glide/recall': 0.30735930735930733, 'glide/precision': 0.5867768595041323, 'glide/f1': 0.40340909090909094, 'loose/recall': 0.14285714285714285, 'loose/precision': 0.42857142857142855, 'loose/f1': 0.21428571428571427, 'slab/recall': 0.5282258064516129, 'slab/precision': 0.6238095238095238, 'slab/f1': 0.5720524017467248, 'none/recall': 0.7582417582417582, 'none/precision': 0.4011627906976744, 'none/f1': 0.5247148288973383, 'recall_um': 0.4341710037274553, 'precision_um': 0.5100801506456898, 'f1_um': 0.4286155089597171, 'accuracy': 0.35872235872235875, 'binary/accuracy': 0.40540540540540543, 'binary/recall': 0.4169329073482428, 'binary/precision': 0.6868421052631579, 'binary/f1': 0.5188866799204771}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [     0.2987     0.22449     0.43952]
+precision:  [    0.62727         0.5      0.7415]
+f1 score:  [    0.40469     0.30986      0.5519]
+unweighted 3Class scores:  {'withoutNone/recall': 0.32090240788397467, 'withoutNone/precision': 0.6229231086373944, 'withoutNone/f1Score': 0.42214999040607654}
+matrix with none:
+ [[         68           3           7           4          23]
+ [          6          29           5           3          21]
+ [          4          10         106           8          12]
+ [         28          33          64          76           0]
+ [        125          72          66           0           0]]
+binary confusion matrix:
+ [[        238          71]
+ [        388          76]]
+{'glide/recall': 0.2943722943722944, 'glide/precision': 0.6476190476190476, 'glide/f1': 0.40476190476190477, 'loose/recall': 0.19727891156462585, 'loose/precision': 0.453125, 'loose/f1': 0.2748815165876777, 'slab/recall': 0.4274193548387097, 'slab/precision': 0.7571428571428571, 'slab/f1': 0.5463917525773195, 'none/recall': 0.8351648351648352, 'none/precision': 0.3781094527363184, 'none/f1': 0.5205479452054795, 'recall_um': 0.4385588489851163, 'precision_um': 0.5589990893745558, 'f1_um': 0.4366457797830954, 'accuracy': 0.36093143596377747, 'binary/accuracy': 0.40620957309184996, 'binary/recall': 0.3801916932907348, 'binary/precision': 0.7702265372168284, 'binary/f1': 0.5090909090909091}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.32035     0.19728     0.52823]
+precision:  [    0.59677     0.53704     0.63592]
+f1 score:  [     0.4169     0.28856     0.57709]
+unweighted 3Class scores:  {'withoutNone/recall': 0.3486170127875197, 'withoutNone/precision': 0.5899111868941705, 'withoutNone/f1Score': 0.4275170444647561}
+matrix with none:
+ [[         72           0           4           5          34]
+ [          4          25           6           2          13]
+ [          7          12         127          19          29]
+ [         27          32          30          68           0]
+ [        121          78          81           0           0]]
+binary confusion matrix:
+ [[        257         102]
+ [        369          68]]
+{'glide/recall': 0.3116883116883117, 'glide/precision': 0.6260869565217392, 'glide/f1': 0.4161849710982659, 'loose/recall': 0.17006802721088435, 'loose/precision': 0.5, 'loose/f1': 0.25380710659898476, 'slab/recall': 0.5120967741935484, 'slab/precision': 0.654639175257732, 'slab/f1': 0.5746606334841629, 'none/recall': 0.723404255319149, 'none/precision': 0.43312101910828027, 'none/f1': 0.5418326693227092, 'recall_um': 0.42931434210297337, 'precision_um': 0.5534617877219378, 'f1_um': 0.4466213451260307, 'accuracy': 0.36683417085427134, 'binary/accuracy': 0.4082914572864322, 'binary/recall': 0.41054313099041534, 'binary/precision': 0.7158774373259053, 'binary/f1': 0.5218274111675127}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.33333     0.19728     0.47984]
+precision:  [    0.53472     0.61702     0.61658]
+f1 score:  [    0.41067     0.29897     0.53968]
+unweighted 3Class scores:  {'withoutNone/recall': 0.33681698485845946, 'withoutNone/precision': 0.5894412698995987, 'withoutNone/f1Score': 0.41643942617138485}
+matrix with none:
+ [[         75           2           8           4          44]
+ [          2          28           2           1          10]
+ [          8          12         116          10          30]
+ [         24          25          47          80           0]
+ [        122          80          75           0           0]]
+binary confusion matrix:
+ [[        253          99]
+ [        373          80]]
+{'glide/recall': 0.3246753246753247, 'glide/precision': 0.5639097744360902, 'glide/f1': 0.4120879120879121, 'loose/recall': 0.19047619047619047, 'loose/precision': 0.6511627906976745, 'loose/f1': 0.29473684210526313, 'slab/recall': 0.46774193548387094, 'slab/precision': 0.6590909090909091, 'slab/f1': 0.5471698113207547, 'none/recall': 0.8421052631578947, 'none/precision': 0.45454545454545453, 'none/f1': 0.5904059040590405, 'recall_um': 0.4562496784483202, 'precision_um': 0.5821772321925321, 'f1_um': 0.46110011739324264, 'accuracy': 0.37142857142857144, 'binary/accuracy': 0.41366459627329194, 'binary/recall': 0.40415335463258784, 'binary/precision': 0.71875, 'binary/f1': 0.5173824130879345}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.31602     0.21088     0.52419]
+precision:  [    0.60833     0.47692     0.56034]
+f1 score:  [    0.41595     0.29245     0.54167]
+unweighted 3Class scores:  {'withoutNone/recall': 0.35036507271530315, 'withoutNone/precision': 0.548533745947539, 'withoutNone/f1Score': 0.41669130426992057}
+matrix with none:
+ [[         71           1           6           1          29]
+ [          7          28           5           1          20]
+ [          6          18         127          24          42]
+ [         13          39          35          65           0]
+ [        134          61          75           0           0]]
+binary confusion matrix:
+ [[        269         117]
+ [        357          65]]
+{'glide/recall': 0.30735930735930733, 'glide/precision': 0.6574074074074074, 'glide/f1': 0.41887905604719766, 'loose/recall': 0.19047619047619047, 'loose/precision': 0.45901639344262296, 'loose/f1': 0.2692307692307692, 'slab/recall': 0.5120967741935484, 'slab/precision': 0.5852534562211982, 'slab/f1': 0.5462365591397851, 'none/recall': 0.7142857142857143, 'none/precision': 0.4276315789473684, 'none/f1': 0.5349794238683127, 'recall_um': 0.4310544965786901, 'precision_um': 0.5323272090046492, 'f1_um': 0.44233145207151614, 'accuracy': 0.36014851485148514, 'binary/accuracy': 0.41336633663366334, 'binary/recall': 0.42971246006389774, 'binary/precision': 0.6968911917098446, 'binary/f1': 0.5316205533596837}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.30303     0.17687     0.52823]
+precision:  [    0.63636     0.63415     0.62381]
+f1 score:  [    0.41056      0.2766     0.57205]
+unweighted 3Class scores:  {'withoutNone/recall': 0.3360422859270786, 'withoutNone/precision': 0.6314398338788583, 'withoutNone/f1Score': 0.4197351103927696}
+matrix with none:
+ [[         70           1           5           1          25]
+ [          3          25           2           0           9]
+ [          7          11         129          20          28]
+ [         61          28          30          70           0]
+ [         90          82          82           0           0]]
+binary confusion matrix:
+ [[        253          83]
+ [        373          70]]
+{'glide/recall': 0.30303030303030304, 'glide/precision': 0.6862745098039216, 'glide/f1': 0.42042042042042044, 'loose/recall': 0.17006802721088435, 'loose/precision': 0.6410256410256411, 'loose/f1': 0.26881720430107525, 'slab/recall': 0.5201612903225806, 'slab/precision': 0.6615384615384615, 'slab/f1': 0.582392776523702, 'none/recall': 0.7692307692307693, 'none/precision': 0.37037037037037035, 'none/f1': 0.5, 'recall_um': 0.4406225974486343, 'precision_um': 0.5898022456845986, 'f1_um': 0.44290760031129944, 'accuracy': 0.3774069319640565, 'binary/accuracy': 0.4146341463414634, 'binary/recall': 0.40415335463258784, 'binary/precision': 0.7529761904761905, 'binary/f1': 0.5259875259875259}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.31602     0.20408     0.51613]
+precision:  [    0.53676     0.46875     0.55411]
+f1 score:  [    0.39782     0.28436     0.53445]
+unweighted 3Class scores:  {'withoutNone/recall': 0.3454093269761473, 'withoutNone/precision': 0.5198757533316356, 'withoutNone/f1Score': 0.40554237238435203}
+matrix with none:
+ [[         72           1           6           5          41]
+ [          4          25           3           2          25]
+ [          8          18         125          25          37]
+ [         37          23          40          66           0]
+ [        110          80          74           0           0]]
+binary confusion matrix:
+ [[        262         135]
+ [        364          66]]
+{'glide/recall': 0.3116883116883117, 'glide/precision': 0.576, 'glide/f1': 0.4044943820224719, 'loose/recall': 0.17006802721088435, 'loose/precision': 0.423728813559322, 'loose/f1': 0.24271844660194175, 'slab/recall': 0.5040322580645161, 'slab/precision': 0.5868544600938967, 'slab/f1': 0.5422993492407808, 'none/recall': 0.673469387755102, 'none/precision': 0.39759036144578314, 'none/f1': 0.5, 'recall_um': 0.41481449617970356, 'precision_um': 0.4960434087747505, 'f1_um': 0.4223780444662986, 'accuracy': 0.3482466747279323, 'binary/accuracy': 0.3966142684401451, 'binary/recall': 0.4185303514376997, 'binary/precision': 0.6599496221662469, 'binary/f1': 0.512218963831867}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.30736     0.13605     0.43952]
+precision:  [    0.58197     0.38462     0.68125]
+f1 score:  [    0.40227     0.20101     0.53431]
+unweighted 3Class scores:  {'withoutNone/recall': 0.294309952720091, 'withoutNone/precision': 0.549277532576713, 'withoutNone/f1Score': 0.37919501318922183}
+matrix with none:
+ [[         70           0           6           3          33]
+ [          7          17          10           1          15]
+ [          5          10         105           8          25]
+ [         53          49          59          78           0]
+ [         96          71          68           0           0]]
+binary confusion matrix:
+ [[        230          85]
+ [        396          78]]
+{'glide/recall': 0.30303030303030304, 'glide/precision': 0.625, 'glide/f1': 0.40816326530612246, 'loose/recall': 0.11564625850340136, 'loose/precision': 0.34, 'loose/f1': 0.17258883248730963, 'slab/recall': 0.42338709677419356, 'slab/precision': 0.6862745098039216, 'slab/f1': 0.5236907730673317, 'none/recall': 0.8666666666666667, 'none/precision': 0.3263598326359833, 'none/f1': 0.4741641337386019, 'recall_um': 0.42718258124364117, 'precision_um': 0.49440858560997625, 'f1_um': 0.3946517511498414, 'accuracy': 0.34220532319391633, 'binary/accuracy': 0.39036755386565275, 'binary/recall': 0.36741214057507987, 'binary/precision': 0.7301587301587301, 'binary/f1': 0.4888416578108395}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.31602     0.21088      0.4879]
+precision:  [     0.5935     0.43056     0.59024]
+f1 score:  [    0.41243     0.28311     0.53422]
+unweighted 3Class scores:  {'withoutNone/recall': 0.33826829852175483, 'withoutNone/precision': 0.5380984643179766, 'withoutNone/f1Score': 0.4099169123009874}
+matrix with none:
+ [[         72           0           7           5          30]
+ [          6          28           9           3          25]
+ [          9          13         116          14          36]
+ [         34          37          35          74           0]
+ [        110          69          81           0           0]]
+binary confusion matrix:
+ [[        260         113]
+ [        366          74]]
+{'glide/recall': 0.3116883116883117, 'glide/precision': 0.631578947368421, 'glide/f1': 0.41739130434782606, 'loose/recall': 0.19047619047619047, 'loose/precision': 0.39436619718309857, 'loose/f1': 0.25688073394495414, 'slab/recall': 0.46774193548387094, 'slab/precision': 0.6170212765957447, 'slab/f1': 0.5321100917431193, 'none/recall': 0.7708333333333334, 'none/precision': 0.4111111111111111, 'none/f1': 0.5362318840579711, 'recall_um': 0.43518494274542663, 'precision_um': 0.5135193830645938, 'f1_um': 0.43565350352346766, 'accuracy': 0.35670356703567035, 'binary/accuracy': 0.4108241082410824, 'binary/recall': 0.41533546325878595, 'binary/precision': 0.6970509383378016, 'binary/f1': 0.5205205205205204}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.32035      0.2449         0.5]
+precision:  [    0.65487        0.45     0.61084]
+f1 score:  [    0.43023     0.31718     0.54989]
+unweighted 3Class scores:  {'withoutNone/recall': 0.3550814265099979, 'withoutNone/precision': 0.5719015650202711, 'withoutNone/f1Score': 0.4324341033782039}
+matrix with none:
+ [[         73           3           4           4          26]
+ [          5          34          10           0          27]
+ [          8          10         119          15          43]
+ [         21          20          46          73           0]
+ [        124          80          69           0           0]]
+binary confusion matrix:
+ [[        266         115]
+ [        360          73]]
+{'glide/recall': 0.31601731601731603, 'glide/precision': 0.6636363636363637, 'glide/f1': 0.42815249266862176, 'loose/recall': 0.23129251700680273, 'loose/precision': 0.4473684210526316, 'loose/f1': 0.30493273542600896, 'slab/recall': 0.4798387096774194, 'slab/precision': 0.6102564102564103, 'slab/f1': 0.5372460496613995, 'none/recall': 0.7934782608695652, 'none/precision': 0.45625, 'none/f1': 0.5793650793650793, 'recall_um': 0.4551567008927758, 'precision_um': 0.5443777987363514, 'f1_um': 0.4624240892802774, 'accuracy': 0.36732186732186733, 'binary/accuracy': 0.41646191646191644, 'binary/recall': 0.4249201277955272, 'binary/precision': 0.6981627296587927, 'binary/f1': 0.5283018867924528}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [      0.329     0.15646     0.50806]
+precision:  [    0.58462     0.48936     0.57273]
+f1 score:  [    0.42105     0.23711     0.53846]
+unweighted 3Class scores:  {'withoutNone/recall': 0.33117714338912496, 'withoutNone/precision': 0.5489014531567723, 'withoutNone/f1Score': 0.39887585736744713}
+matrix with none:
+ [[         74           0           8           3          33]
+ [          5          20           5           1          14]
+ [          6          14         122          24          38]
+ [         34          46          29          64           0]
+ [        112          67          84           0           0]]
+binary confusion matrix:
+ [[        254         113]
+ [        372          64]]
+{'glide/recall': 0.3203463203463203, 'glide/precision': 0.6271186440677966, 'glide/f1': 0.42406876790830944, 'loose/recall': 0.1360544217687075, 'loose/precision': 0.4444444444444444, 'loose/f1': 0.20833333333333334, 'slab/recall': 0.49193548387096775, 'slab/precision': 0.5980392156862745, 'slab/f1': 0.5398230088495576, 'none/recall': 0.6956521739130435, 'none/precision': 0.3699421965317919, 'none/f1': 0.48301886792452825, 'recall_um': 0.41099709997475975, 'precision_um': 0.5098861251825768, 'f1_um': 0.4138109945039321, 'accuracy': 0.34869240348692404, 'binary/accuracy': 0.3960149439601494, 'binary/recall': 0.4057507987220447, 'binary/precision': 0.6920980926430518, 'binary/f1': 0.5115810674723061}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.33766     0.16327     0.47984]
+precision:  [    0.63552     0.62424     0.63459]
+f1 score:  [    0.44101     0.25883     0.54647]
+unweighted 3Class scores:  {'withoutNone/recall': 0.3269221178207353, 'withoutNone/precision': 0.6314479379981627, 'withoutNone/f1Score': 0.41543740015640446}
+matrix with none:
+ [[         76           1           7           2          31]
+ [          2          21           2           1          17]
+ [          9          14         122          11          30]
+ [         29          27          42          78           0]
+ [        115          84          75           0           0]]
+binary confusion matrix:
+ [[        254          92]
+ [        372          78]]
+{'glide/recall': 0.329004329004329, 'glide/precision': 0.6495726495726496, 'glide/f1': 0.4367816091954023, 'loose/recall': 0.14285714285714285, 'loose/precision': 0.4883720930232558, 'loose/f1': 0.2210526315789474, 'slab/recall': 0.49193548387096775, 'slab/precision': 0.6559139784946236, 'slab/f1': 0.5622119815668202, 'none/recall': 0.8478260869565217, 'none/precision': 0.4431818181818182, 'none/f1': 0.582089552238806, 'recall_um': 0.4529057606722403, 'precision_um': 0.5592601348180868, 'f1_um': 0.450533943644994, 'accuracy': 0.3731155778894472, 'binary/accuracy': 0.41708542713567837, 'binary/recall': 0.4057507987220447, 'binary/precision': 0.7341040462427746, 'binary/f1': 0.5226337448559671}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [      0.329     0.23129     0.50403]
+precision:  [    0.56296     0.47222     0.60096]
+f1 score:  [     0.4153      0.3105     0.54825]
+unweighted 3Class scores:  {'withoutNone/recall': 0.354776368025216, 'withoutNone/precision': 0.5453822412155745, 'withoutNone/f1Score': 0.42468281452939927}
+matrix with none:
+ [[         75           2          10           3          34]
+ [          5          30           4           0          30]
+ [          7          14         121          12          42]
+ [         28          25          41          77           0]
+ [        116          76          72           0           0]]
+binary confusion matrix:
+ [[        268         121]
+ [        358          77]]
+{'glide/recall': 0.3246753246753247, 'glide/precision': 0.6048387096774194, 'glide/f1': 0.4225352112676056, 'loose/recall': 0.20408163265306123, 'loose/precision': 0.43478260869565216, 'loose/f1': 0.2777777777777778, 'slab/recall': 0.4879032258064516, 'slab/precision': 0.6173469387755102, 'slab/f1': 0.5450450450450451, 'none/recall': 0.8369565217391305, 'none/precision': 0.4502923976608187, 'none/f1': 0.5855513307984791, 'recall_um': 0.46340417621849195, 'precision_um': 0.5268151637023502, 'f1_um': 0.4577273412222269, 'accuracy': 0.36771844660194175, 'binary/accuracy': 0.4186893203883495, 'binary/recall': 0.4281150159744409, 'binary/precision': 0.6889460154241646, 'binary/f1': 0.5280788177339901}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.27273     0.18367     0.51613]
+precision:  [    0.68478     0.47368     0.59813]
+f1 score:  [    0.39009     0.26471     0.55411]
+unweighted 3Class scores:  {'withoutNone/recall': 0.32417659145769745, 'withoutNone/precision': 0.5855325534478211, 'withoutNone/f1Score': 0.4029704385741537}
+matrix with none:
+ [[         63           0           6           2          17]
+ [          3          25           3           1          25]
+ [          9           9         124          21          40]
+ [         26          40          39          67           0]
+ [        130          73          76           0           0]]
+binary confusion matrix:
+ [[        242         106]
+ [        384          67]]
+{'glide/recall': 0.2727272727272727, 'glide/precision': 0.7159090909090909, 'glide/f1': 0.39498432601880873, 'loose/recall': 0.17006802721088435, 'loose/precision': 0.43859649122807015, 'loose/f1': 0.24509803921568626, 'slab/recall': 0.5, 'slab/precision': 0.6108374384236454, 'slab/f1': 0.5498891352549888, 'none/recall': 0.7362637362637363, 'none/precision': 0.38953488372093026, 'none/f1': 0.5095057034220533, 'recall_um': 0.41976475905047334, 'precision_um': 0.5387194760704341, 'f1_um': 0.42486930097788433, 'accuracy': 0.34918648310387984, 'binary/accuracy': 0.3867334167709637, 'binary/recall': 0.3865814696485623, 'binary/precision': 0.6954022988505747, 'binary/f1': 0.4969199178644764}
+iou_thres =  0.2
+conf_thres =  0.25
+recall:  [    0.35498     0.22449     0.52419]
+precision:  [    0.64062     0.45833     0.60748]
+f1 score:  [    0.45682     0.30137     0.56277]
+unweighted 3Class scores:  {'withoutNone/recall': 0.36788723309460636, 'withoutNone/precision': 0.5688116562824507, 'withoutNone/f1Score': 0.4403216461063601}
+matrix with none:
+ [[         80           1           7           5          30]
+ [          8          30          11           2          17]
+ [          5          10         121          17          46]
+ [         16          33          32          69           0]
+ [        122          73          77           0           0]]
+binary confusion matrix:
+ [[        273         117]
+ [        353          69]]
+{'glide/recall': 0.3463203463203463, 'glide/precision': 0.6504065040650406, 'glide/f1': 0.45197740112994345, 'loose/recall': 0.20408163265306123, 'loose/precision': 0.4411764705882353, 'loose/f1': 0.27906976744186046, 'slab/recall': 0.4879032258064516, 'slab/precision': 0.6080402010050251, 'slab/f1': 0.5413870246085011, 'none/recall': 0.7419354838709677, 'none/precision': 0.46, 'none/f1': 0.5679012345679013, 'recall_um': 0.4450601721627067, 'precision_um': 0.5399057939145753, 'f1_um': 0.46008385693705156, 'accuracy': 0.3694581280788177, 'binary/accuracy': 0.4211822660098522, 'binary/recall': 0.43610223642172524, 'binary/precision': 0.7, 'binary/f1': 0.5374015748031497}
+iou_thres =  0.2
+conf_thres =  0.25

@@ -2,11 +2,11 @@
 #SBATCH --job-name=webcam-yolo-bench
 #SBATCH --output=logs/%x_%A_%a.out
 #SBATCH --error=logs/%x_%A_%a.err
-#SBATCH --array=0-35%4
+#SBATCH --array=0-41%8
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=62G
-#SBATCH --time=0-23:00:00
-#SBATCH --gpus=h100-3g.40gb:1
+#SBATCH --time=0-5:00:00
+#SBATCH --gpus=nvidia_h100_80gb_hbm3_3g.40gb:1
 
 set -euo pipefail
 
@@ -15,6 +15,7 @@ set -euo pipefail
 #####################
 SOURCEDIR="$HOME/links/projects/def-boakes/garnierk/webcam-avalanche-detection"
 export TORCH_HOME="$SOURCEDIR/torch_cache"
+export OMP_NUM_THREADS=1
 
 mkdir -p "$SOURCEDIR/logs"
 mkdir -p "$SLURM_TMPDIR"
@@ -33,6 +34,7 @@ python -m pip install -e .
 mkdir -p "$SLURM_TMPDIR/data"
 unzip -q -d "$SLURM_TMPDIR/data" "$SOURCEDIR/uibk_avalanches.zip"
 
+python utils/train_test_split.py --source-dir $SLURM_TMPDIR/data --output-dir $SLURM_TMPDIR/data
 #####################
 # User config
 #####################
@@ -56,8 +58,6 @@ PATIENCE=25
 # Comet
 #####################
 export COMET_PROJECT_NAME="paper_yolo"
-# export COMET_API_KEY="YOUR_API_KEY"
-# export COMET_WORKSPACE="YOUR_WORKSPACE"
 export COMET_AUTO_LOG_PARAMETERS=1
 export COMET_AUTO_LOG_METRICS=1
 export COMET_AUTO_LOG_MODEL=1
@@ -66,7 +66,20 @@ export COMET_AUTO_LOG_MODEL=1
 # Prepare labels + splits on the cluster
 #####################
 cd "$DATADIR"
-"$PYTHON" "$PREP_SCRIPT" --data-dir "$DATADIR"
+mkdir -p "$SLURM_TMPDIR/yolo_split"
+
+DATASET_YAML_DIR="$SLURM_TMPDIR/segmentation/data/"
+
+mkdir -p $DATASET_YAML_DIR
+
+"$PYTHON" "$PREP_SCRIPT" --data-dir "$DATADIR" --output-dir "$SLURM_TMPDIR/yolo_split" --source-dir "$SLURM_TMPDIR"
+
+echo "=== CHECK YAML ==="
+cat "$SLURM_TMPDIR/segmentation/data/avalanchesplit100.yaml"
+
+echo "=== CHECK CLASSES IN LABELS ==="
+find "$SLURM_TMPDIR" -name "*.txt" -path "*labels*" -print0 | \
+xargs -0 awk '{print $1}' | sort -n | uniq -c
 
 #####################
 # Experiment grid
@@ -78,6 +91,7 @@ MODELS=(
   "yolo5_nseg:yolov5n-seg.pt"
   "yolo5_sseg:yolov5s-seg.pt"
   "yolo5_mseg:yolov5m-seg.pt"
+  "yolo5_lseg:yolov5l-seg.pt"
 )
 
 IMSIZES=(448 896)
@@ -104,9 +118,7 @@ SEED="${SEEDS[$SEED_IDX]}"
 RUN_NAME="${MODEL_TAG}_${IMSIZE}_p${PATIENCE}s${SEED}"
 WEIGHTS_PATH="$WEIGHTS_DIR/$WEIGHT_FILE"
 
-# Mets ici le vrai emplacement des YAML générés
-DATASET_YAML="$DATADIR/avalanchesplit${SEED}.yaml"
-
+DATASET_YAML="$SLURM_TMPDIR/segmentation/data/avalanchesplit${SEED}.yaml"
 echo "TASK_ID       : $TASK_ID"
 echo "MODEL_TAG     : $MODEL_TAG"
 echo "WEIGHTS_PATH  : $WEIGHTS_PATH"

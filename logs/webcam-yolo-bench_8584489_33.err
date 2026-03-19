@@ -1,0 +1,200 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) CCconfig        6)  ucx/1.14.1         11) flexiblas/3.3.1
+  2) gentoo/2023     7)  libfabric/1.18.0   12) aocl-blas/5.1
+  3) gcccore/.12.3   8)  pmix/4.2.4         13) aocl-lapack/5.1
+  4) gcc/12.3        9)  ucc/1.2.0          14) StdEnv/2023
+  5) hwloc/2.9.1     10) openmpi/4.1.5
+/lustre09/project/6094000/garnierk/webcam-avalanche-detection/segmentation/utils/general.py:35: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources as pkg
+[34m[1mtrain: [0mweights=/home/garnierk/links/projects/def-boakes/garnierk/webcam-avalanche-detection/weights/yolov5m-seg.pt, cfg=, data=/localscratch/garnierk.8587226.0/segmentation/data/avalanchesplit50.yaml, hyp=/home/garnierk/links/projects/def-boakes/garnierk/webcam-avalanche-detection/segmentation/data/hyps/hyp.scratch_withConf.yaml, epochs=180, batch_size=8, imgsz=896, rect=False, resume=False, nosave=False, noval=False, noautoanchor=False, noplots=False, evolve=None, bucket=, cache=None, image_weights=False, device=0, multi_scale=False, single_cls=False, optimizer=SGD, sync_bn=False, workers=8, project=paper_yolo, name=yolo5_mseg_896_p25s50, exist_ok=False, quad=False, cos_lr=False, label_smoothing=0.0, patience=25, freeze=[0], save_period=-1, seed=0, local_rank=-1, entity=None, upload_dataset=False, bbox_interval=-1, artifact_alias=latest
+YOLOv3 🚀 2026-3-13 Python-3.10.13 torch-2.6.0 CUDA:0 (NVIDIA H100 80GB HBM3 MIG 3g.40gb, 40448MiB)
+
+[34m[1mhyperparameters: [0mlr0=0.01, lrf=0.1, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=0.05, cls=0.5, cls_pw=1.0, obj=1.0, obj_pw=1.0, iou_t=0.2, conf_t_=0.25, anchor_t=4.0, fl_gamma=0.0, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, mosaic=1.0, mixup=0.0, copy_paste=0.0
+[34m[1mClearML: [0mrun 'pip install clearml' to automatically track, visualize and remotely train YOLOv3 🚀 in ClearML
+[34m[1mTensorBoard: [0mStart with 'tensorboard --logdir paper_yolo', view at http://localhost:6006/
+COMET INFO: Experiment is live on comet.com https://www.comet.com/garnierk/paper-yolo/96b8bcea13924b058963d7aeba50e732
+
+Overriding model.yaml nc=80 with nc=3
+
+                 from  n    params  module                                  arguments                     
+  0                -1  1      5280  models.common.Conv                      [3, 48, 6, 2, 2]              
+  1                -1  1     41664  models.common.Conv                      [48, 96, 3, 2]                
+  2                -1  2     65280  models.common.C3                        [96, 96, 2]                   
+  3                -1  1    166272  models.common.Conv                      [96, 192, 3, 2]               
+  4                -1  4    444672  models.common.C3                        [192, 192, 4]                 
+  5                -1  1    664320  models.common.Conv                      [192, 384, 3, 2]              
+  6                -1  6   2512896  models.common.C3                        [384, 384, 6]                 
+  7                -1  1   2655744  models.common.Conv                      [384, 768, 3, 2]              
+  8                -1  2   4134912  models.common.C3                        [768, 768, 2]                 
+  9                -1  1   1476864  models.common.SPPF                      [768, 768, 5]                 
+ 10                -1  1    295680  models.common.Conv                      [768, 384, 1, 1]              
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']          
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]                           
+ 13                -1  2   1182720  models.common.C3                        [768, 384, 2, False]          
+ 14                -1  1     74112  models.common.Conv                      [384, 192, 1, 1]              
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']          
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]                           
+ 17                -1  2    296448  models.common.C3                        [384, 192, 2, False]          
+ 18                -1  1    332160  models.common.Conv                      [192, 192, 3, 2]              
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]                           
+ 20                -1  2   1035264  models.common.C3                        [384, 384, 2, False]          
+ 21                -1  1   1327872  models.common.Conv                      [384, 384, 3, 2]              
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]                           
+ 23                -1  2   4134912  models.common.C3                        [768, 768, 2, False]          
+ 24      [17, 20, 23]  1    832168  models.yolo.Segment                     [3, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], 32, 192, [192, 384, 768]]
+Model summary: 302 layers, 21679240 parameters, 21679240 gradients, 70.3 GFLOPs
+
+Transferred 493/499 items from /home/garnierk/links/projects/def-boakes/garnierk/webcam-avalanche-detection/weights/yolov5m-seg.pt
+/lustre09/project/6094000/garnierk/webcam-avalanche-detection/segmentation/models/common.py:702: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp.autocast(autocast):
+/lustre09/project/6094000/garnierk/webcam-avalanche-detection/segmentation/models/common.py:702: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp.autocast(autocast):
+[34m[1mAMP: [0mchecks passed ✅
+[34m[1moptimizer:[0m SGD(lr=0.01) with parameter groups 82 weight(decay=0.0), 85 weight(decay=0.0005), 85 bias
+[34m[1mtrain: [0mScanning /localscratch/garnierk.8587226.0/yolo_split/train50...:   0%|          | 0/3267 [00:00<?, ?it/s][34m[1mtrain: [0mScanning /localscratch/garnierk.8587226.0/yolo_split/train50... 909 images, 676 backgrounds, 0 corrupt:  49%|████▊     | 1585/3267 [00:00<00:00, 15688.28it/s][34m[1mtrain: [0mScanning /localscratch/garnierk.8587226.0/yolo_split/train50... 2409 images, 858 backgrounds, 0 corrupt: 100%|██████████| 3267/3267 [00:00<00:00, 16488.41it/s]
+[34m[1mtrain: [0mNew cache created: /localscratch/garnierk.8587226.0/yolo_split/train50.cache
+[34m[1mval: [0mScanning /localscratch/garnierk.8587226.0/yolo_split/val50...:   0%|          | 0/345 [00:00<?, ?it/s][34m[1mval: [0mScanning /localscratch/garnierk.8587226.0/yolo_split/val50... 253 images, 92 backgrounds, 0 corrupt: 100%|██████████| 345/345 [00:00<00:00, 5242.42it/s]
+[34m[1mval: [0mNew cache created: /localscratch/garnierk.8587226.0/yolo_split/val50.cache
+
+[34m[1mAutoAnchor: [0m3.93 anchors/target, 1.000 Best Possible Recall (BPR). Current anchors are a good fit to dataset ✅
+Plotting labels to paper_yolo/yolo5_mseg_896_p25s50/labels.jpg... 
+/home/garnierk/links/projects/def-boakes/garnierk/webcam-avalanche-detection/segmentation/train.py:253: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=amp)
+Image sizes 896 train, 896 val
+Using 8 dataloader workers
+Logging results to [1mpaper_yolo/yolo5_mseg_896_p25s50[0m
+Starting training for 180 epochs...
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+  0%|          | 0/409 [00:00<?, ?it/s]/home/garnierk/links/projects/def-boakes/garnierk/webcam-avalanche-detection/segmentation/train.py:308: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(amp):
+  0%|          | 0/409 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/garnierk/links/projects/def-boakes/garnierk/webcam-avalanche-detection/segmentation/train.py", line 638, in <module>
+    main(opt)
+  File "/home/garnierk/links/projects/def-boakes/garnierk/webcam-avalanche-detection/segmentation/train.py", line 531, in main
+    train(opt.hyp, opt, device, callbacks)
+  File "/home/garnierk/links/projects/def-boakes/garnierk/webcam-avalanche-detection/segmentation/train.py", line 310, in train
+    loss, loss_items = compute_loss(pred, targets.to(device))  # loss scaled by batch_size
+  File "/lustre09/project/6094000/garnierk/webcam-avalanche-detection/segmentation/utils/loss.py", line 125, in __call__
+    tcls, tbox, indices, anchors = self.build_targets(p, targets)  # targets
+  File "/lustre09/project/6094000/garnierk/webcam-avalanche-detection/segmentation/utils/loss.py", line 198, in build_targets
+    anchors, shape = self.anchors[i], p[i].shape
+AttributeError: 'list' object has no attribute 'shape'
+COMET INFO: ---------------------------------------------------------------------------------------
+COMET INFO: Comet.ml Experiment Summary
+COMET INFO: ---------------------------------------------------------------------------------------
+COMET INFO:   Data:
+COMET INFO:     display_summary_level : 1
+COMET INFO:     name                  : yolo5_mseg_896_p25s50
+COMET INFO:     url                   : https://www.comet.com/garnierk/paper-yolo/96b8bcea13924b058963d7aeba50e732
+COMET INFO:   Others:
+COMET INFO:     Created from                : YOLOv5
+COMET INFO:     Name                        : yolo5_mseg_896_p25s50
+COMET INFO:     Run Path                    : garnierk/paper-yolo/96b8bcea13924b058963d7aeba50e732
+COMET INFO:     comet_log_batch_metrics     : False
+COMET INFO:     comet_log_confusion_matrix  : True
+COMET INFO:     comet_log_per_class_metrics : False
+COMET INFO:     comet_max_image_uploads     : 100
+COMET INFO:     comet_mode                  : online
+COMET INFO:     comet_model_name            : yolov5
+COMET INFO:     hasNestedParams             : True
+COMET INFO:   Parameters:
+COMET INFO:     anchor_t            : 4.0
+COMET INFO:     artifact_alias      : latest
+COMET INFO:     batch_size          : 8
+COMET INFO:     bbox_interval       : -1
+COMET INFO:     box                 : 0.05
+COMET INFO:     bucket              : 
+COMET INFO:     cache               : None
+COMET INFO:     cfg                 : 
+COMET INFO:     cls                 : 0.01875
+COMET INFO:     cls_pw              : 1.0
+COMET INFO:     conf_t_             : 0.25
+COMET INFO:     copy_paste          : 0.0
+COMET INFO:     cos_lr              : False
+COMET INFO:     degrees             : 0.0
+COMET INFO:     entity              : None
+COMET INFO:     evolve              : None
+COMET INFO:     exist_ok            : False
+COMET INFO:     fl_gamma            : 0.0
+COMET INFO:     fliplr              : 0.5
+COMET INFO:     flipud              : 0.0
+COMET INFO:     freeze              : [0]
+COMET INFO:     hsv_h               : 0.015
+COMET INFO:     hsv_s               : 0.7
+COMET INFO:     hsv_v               : 0.4
+COMET INFO:     hyp|anchor_t        : 4.0
+COMET INFO:     hyp|box             : 0.05
+COMET INFO:     hyp|cls             : 0.5
+COMET INFO:     hyp|cls_pw          : 1.0
+COMET INFO:     hyp|conf_t_         : 0.25
+COMET INFO:     hyp|copy_paste      : 0.0
+COMET INFO:     hyp|degrees         : 0.0
+COMET INFO:     hyp|fl_gamma        : 0.0
+COMET INFO:     hyp|fliplr          : 0.5
+COMET INFO:     hyp|flipud          : 0.0
+COMET INFO:     hyp|hsv_h           : 0.015
+COMET INFO:     hyp|hsv_s           : 0.7
+COMET INFO:     hyp|hsv_v           : 0.4
+COMET INFO:     hyp|iou_t           : 0.2
+COMET INFO:     hyp|lr0             : 0.01
+COMET INFO:     hyp|lrf             : 0.1
+COMET INFO:     hyp|mixup           : 0.0
+COMET INFO:     hyp|momentum        : 0.937
+COMET INFO:     hyp|mosaic          : 1.0
+COMET INFO:     hyp|obj             : 1.0
+COMET INFO:     hyp|obj_pw          : 1.0
+COMET INFO:     hyp|perspective     : 0.0
+COMET INFO:     hyp|scale           : 0.5
+COMET INFO:     hyp|shear           : 0.0
+COMET INFO:     hyp|translate       : 0.1
+COMET INFO:     hyp|warmup_bias_lr  : 0.1
+COMET INFO:     hyp|warmup_epochs   : 3.0
+COMET INFO:     hyp|warmup_momentum : 0.8
+COMET INFO:     hyp|weight_decay    : 0.0005
+COMET INFO:     image_weights       : False
+COMET INFO:     imgsz               : 896
+COMET INFO:     iou_t               : 0.2
+COMET INFO:     label_smoothing     : 0.0
+COMET INFO:     local_rank          : -1
+COMET INFO:     lr0                 : 0.01
+COMET INFO:     lrf                 : 0.1
+COMET INFO:     mixup               : 0.0
+COMET INFO:     momentum            : 0.937
+COMET INFO:     mosaic              : 1.0
+COMET INFO:     multi_scale         : False
+COMET INFO:     noautoanchor        : False
+COMET INFO:     noplots             : False
+COMET INFO:     nosave              : False
+COMET INFO:     noval               : False
+COMET INFO:     obj                 : 1.9599999999999997
+COMET INFO:     obj_pw              : 1.0
+COMET INFO:     optimizer           : SGD
+COMET INFO:     perspective         : 0.0
+COMET INFO:     quad                : False
+COMET INFO:     rect                : False
+COMET INFO:     resume              : False
+COMET INFO:     save_dir            : paper_yolo/yolo5_mseg_896_p25s50
+COMET INFO:     save_period         : -1
+COMET INFO:     scale               : 0.5
+COMET INFO:     seed                : 0
+COMET INFO:     shear               : 0.0
+COMET INFO:     single_cls          : False
+COMET INFO:     sync_bn             : False
+COMET INFO:     translate           : 0.1
+COMET INFO:     upload_dataset      : False
+COMET INFO:     val_conf_threshold  : 0.001
+COMET INFO:     val_iou_threshold   : 0.6
+COMET INFO:     warmup_bias_lr      : 0.1
+COMET INFO:     warmup_epochs       : 3.0
+COMET INFO:     warmup_momentum     : 0.8
+COMET INFO:     weight_decay        : 0.0005
+COMET INFO:   Uploads:
+COMET INFO:     asset               : 5 (476.72 KB)
+COMET INFO:     environment details : 1
+COMET INFO:     git metadata        : 1
+COMET INFO:     installed packages  : 1
+COMET INFO: 
